@@ -1,0 +1,192 @@
+-- ═══════════════════════════════════════════════════════════════
+-- Migration 001 — multi-school support
+-- Adds a sites table and a per-season team registry (team → school).
+-- NON-DESTRUCTIVE: does not drop or change existing score rows.
+-- Paste into the D1 console once. Safe to re-run.
+-- (Do NOT re-run schema.sql on the live database — it drops tables.)
+-- ═══════════════════════════════════════════════════════════════
+
+CREATE TABLE IF NOT EXISTS sites (
+  id      TEXT PRIMARY KEY,
+  name    TEXT NOT NULL,
+  is_home INTEGER NOT NULL DEFAULT 0,
+  color   TEXT,
+  sort    INTEGER NOT NULL DEFAULT 100
+);
+
+CREATE TABLE IF NOT EXISTS teams (
+  season TEXT NOT NULL,
+  number TEXT NOT NULL,
+  name   TEXT,
+  site   TEXT NOT NULL DEFAULT 'unknown',
+  PRIMARY KEY (season, number)
+);
+CREATE INDEX IF NOT EXISTS idx_teams_site ON teams(site);
+
+INSERT OR IGNORE INTO sites (id, name, is_home, color, sort) VALUES
+  ('west-cta',     'West CTA',     1, '#00FF41', 0),
+  ('shadow',       'Shadow',       0, '#00BFFF', 10),
+  ('faith',        'Faith',        0, '#DDA0DD', 20),
+  ('swcta',        'SWCTA',        0, '#FF6347', 30),
+  ('sierra-vista', 'Sierra Vista', 0, '#20B2AA', 40),
+  ('eldorado',     'Eldorado',     0, '#F0E68C', 50),
+  ('clark',        'Clark',        0, '#FF69B4', 60),
+  ('unknown',      'Unknown',      0, '#6b7a7a', 999);
+
+-- Every existing scored team is a West CTA team.
+INSERT OR IGNORE INTO teams (season, number, name, site)
+  SELECT season, number, MAX(name), 'west-cta' FROM scores
+  WHERE number IS NOT NULL AND number <> ''
+  GROUP BY season, number;
+
+-- ── Seed: 2026-27 Round 1 (West CTA) ──
+INSERT OR IGNORE INTO rounds_meta (season, round, teams_nationwide, date) VALUES ('26-27','R1',NULL,'Oct 2026');
+DELETE FROM scores WHERE season='26-27' AND round='R1' AND number='19-1521';
+INSERT INTO scores (season,round,number,name,linux,win_desktop,win_server,packet_total,adjust,total) VALUES ('26-27','R1','19-1521','AFR',100,100,NULL,NULL,NULL,200);
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('26-27','19-1521','AFR','west-cta');
+DELETE FROM scores WHERE season='26-27' AND round='R1' AND number='19-1524';
+INSERT INTO scores (season,round,number,name,linux,win_desktop,win_server,packet_total,adjust,total) VALUES ('26-27','R1','19-1524','Bird Brains',100,100,NULL,NULL,NULL,200);
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('26-27','19-1524','Bird Brains','west-cta');
+DELETE FROM scores WHERE season='26-27' AND round='R1' AND number='19-1520';
+INSERT INTO scores (season,round,number,name,linux,win_desktop,win_server,packet_total,adjust,total) VALUES ('26-27','R1','19-1520','Keyboard Krumbs',100,100,NULL,NULL,NULL,200);
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('26-27','19-1520','Keyboard Krumbs','west-cta');
+DELETE FROM scores WHERE season='26-27' AND round='R1' AND number='19-2580';
+INSERT INTO scores (season,round,number,name,linux,win_desktop,win_server,packet_total,adjust,total) VALUES ('26-27','R1','19-2580','CyberWarriorHackerDemonGods',100,100,NULL,NULL,NULL,200);
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('26-27','19-2580','CyberWarriorHackerDemonGods','west-cta');
+DELETE FROM scores WHERE season='26-27' AND round='R1' AND number='19-1523';
+INSERT INTO scores (season,round,number,name,linux,win_desktop,win_server,packet_total,adjust,total) VALUES ('26-27','R1','19-1523','Mohammed and Friends',100,100,NULL,NULL,NULL,200);
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('26-27','19-1523','Mohammed and Friends','west-cta');
+DELETE FROM scores WHERE season='26-27' AND round='R1' AND number='19-2431';
+INSERT INTO scores (season,round,number,name,linux,win_desktop,win_server,packet_total,adjust,total) VALUES ('26-27','R1','19-2431','Overclocked',100,100,NULL,NULL,NULL,200);
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('26-27','19-2431','Overclocked','west-cta');
+DELETE FROM scores WHERE season='26-27' AND round='R1' AND number='19-2583';
+INSERT INTO scores (season,round,number,name,linux,win_desktop,win_server,packet_total,adjust,total) VALUES ('26-27','R1','19-2583','Spesh Ops',100,100,NULL,NULL,NULL,200);
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('26-27','19-2583','Spesh Ops','west-cta');
+DELETE FROM scores WHERE season='26-27' AND round='R1' AND number='19-1522';
+INSERT INTO scores (season,round,number,name,linux,win_desktop,win_server,packet_total,adjust,total) VALUES ('26-27','R1','19-1522','Five Guys',100,100,NULL,NULL,NULL,200);
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('26-27','19-1522','Five Guys','west-cta');
+DELETE FROM scores WHERE season='26-27' AND round='R1' AND number='19-2429';
+INSERT INTO scores (season,round,number,name,linux,win_desktop,win_server,packet_total,adjust,total) VALUES ('26-27','R1','19-2429','GGFreakinEZ',100,100,NULL,NULL,NULL,200);
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('26-27','19-2429','GGFreakinEZ','west-cta');
+DELETE FROM scores WHERE season='26-27' AND round='R1' AND number='19-2430';
+INSERT INTO scores (season,round,number,name,linux,win_desktop,win_server,packet_total,adjust,total) VALUES ('26-27','R1','19-2430','CyberPsychosis',100,100,NULL,NULL,NULL,200);
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('26-27','19-2430','CyberPsychosis','west-cta');
+DELETE FROM scores WHERE season='26-27' AND round='R1' AND number='19-2432';
+INSERT INTO scores (season,round,number,name,linux,win_desktop,win_server,packet_total,adjust,total) VALUES ('26-27','R1','19-2432','The Nissan Skylines',91,100,NULL,NULL,NULL,191);
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('26-27','19-2432','The Nissan Skylines','west-cta');
+DELETE FROM scores WHERE season='26-27' AND round='R1' AND number='19-2428';
+INSERT INTO scores (season,round,number,name,linux,win_desktop,win_server,packet_total,adjust,total) VALUES ('26-27','R1','19-2428','Cyber Tygers',100,87,NULL,NULL,NULL,187);
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('26-27','19-2428','Cyber Tygers','west-cta');
+DELETE FROM scores WHERE season='26-27' AND round='R1' AND number='19-2582';
+INSERT INTO scores (season,round,number,name,linux,win_desktop,win_server,packet_total,adjust,total) VALUES ('26-27','R1','19-2582','Thy Nul Goats',100,84,NULL,NULL,NULL,184);
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('26-27','19-2582','Thy Nul Goats','west-cta');
+DELETE FROM scores WHERE season='26-27' AND round='R1' AND number='19-2584';
+INSERT INTO scores (season,round,number,name,linux,win_desktop,win_server,packet_total,adjust,total) VALUES ('26-27','R1','19-2584','SSS',95,80,NULL,NULL,NULL,175);
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('26-27','19-2584','SSS','west-cta');
+DELETE FROM scores WHERE season='26-27' AND round='R1' AND number='19-2581';
+INSERT INTO scores (season,round,number,name,linux,win_desktop,win_server,packet_total,adjust,total) VALUES ('26-27','R1','19-2581','Las Gallinas Locas',95,75,NULL,NULL,NULL,170);
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('26-27','19-2581','Las Gallinas Locas','west-cta');
+
+-- ── Seed: 2025-26 State Round packet scores, other Nevada schools (from Packet Score Analysis sheet) ──
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-2537';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-2537','18-2537',30,67.9,97.9,'Platinum');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-2537',NULL,'eldorado');
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-1710';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-1710','18-1710',27,59.5,86.5,'Platinum');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-1710',NULL,'unknown');
+UPDATE scores SET packet_quiz=COALESCE(packet_quiz,30), packet_image=COALESCE(packet_image,55.3) WHERE season='25-26' AND round='State' AND number='18-1543';
+UPDATE scores SET packet_quiz=COALESCE(packet_quiz,30), packet_image=COALESCE(packet_image,53.2) WHERE season='25-26' AND round='State' AND number='18-1535';
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-0902';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-0902','18-0902',30,50.4,80.4,'Platinum');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-0902',NULL,'faith');
+UPDATE scores SET packet_quiz=COALESCE(packet_quiz,27), packet_image=COALESCE(packet_image,50.4) WHERE season='25-26' AND round='State' AND number='18-1532';
+UPDATE scores SET packet_quiz=COALESCE(packet_quiz,27), packet_image=COALESCE(packet_image,45.5) WHERE season='25-26' AND round='State' AND number='18-1545';
+UPDATE scores SET packet_quiz=COALESCE(packet_quiz,27), packet_image=COALESCE(packet_image,45.5) WHERE season='25-26' AND round='State' AND number='18-1539';
+UPDATE scores SET packet_quiz=COALESCE(packet_quiz,30), packet_image=COALESCE(packet_image,41.3) WHERE season='25-26' AND round='State' AND number='18-1536';
+UPDATE scores SET packet_quiz=COALESCE(packet_quiz,27), packet_image=COALESCE(packet_image,44.1) WHERE season='25-26' AND round='State' AND number='18-1534';
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-0447';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-0447','18-0447',27,44.1,71.1,'Platinum');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-0447',NULL,'shadow');
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-3836';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-3836','18-3836',30,39.2,69.2,'Platinum');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-3836',NULL,'clark');
+UPDATE scores SET packet_quiz=COALESCE(packet_quiz,30), packet_image=COALESCE(packet_image,34.3) WHERE season='25-26' AND round='State' AND number='18-1537';
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-0442';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-0442','18-0442',30,0,30,'Platinum');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-0442',NULL,'shadow');
+UPDATE scores SET packet_quiz=COALESCE(packet_quiz,30), packet_image=COALESCE(packet_image,58.1) WHERE season='25-26' AND round='State' AND number='18-1533';
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-2332';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-2332','18-2332',30,53.9,83.9,'Gold');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-2332',NULL,'sierra-vista');
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-1645';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-1645','18-1645',27,56.7,83.7,'Gold');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-1645',NULL,'swcta');
+UPDATE scores SET packet_quiz=COALESCE(packet_quiz,30), packet_image=COALESCE(packet_image,48.3) WHERE season='25-26' AND round='State' AND number='18-1538';
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-3967';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-3967','18-3967',30,44.8,74.8,'Gold');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-3967',NULL,'unknown');
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-1713';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-1713','18-1713',27,46.2,73.2,'Gold');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-1713',NULL,'unknown');
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-0911';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-0911','18-0911',30,39.9,69.9,'Gold');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-0911',NULL,'faith');
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-1711';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-1711','18-1711',30,37.1,67.1,'Gold');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-1711',NULL,'unknown');
+UPDATE scores SET packet_quiz=COALESCE(packet_quiz,27), packet_image=COALESCE(packet_image,28) WHERE season='25-26' AND round='State' AND number='18-1546';
+UPDATE scores SET packet_quiz=COALESCE(packet_quiz,27), packet_image=COALESCE(packet_image,25.2) WHERE season='25-26' AND round='State' AND number='18-1541';
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-1644';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-1644','18-1644',30,18.2,48.2,'Gold');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-1644',NULL,'swcta');
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-1712';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-1712','18-1712',21,11.9,32.9,'Gold');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-1712',NULL,'unknown');
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-2224';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-2224','18-2224',27,0,27,'Gold');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-2224',NULL,'unknown');
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-0912';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-0912','18-0912',27,0,27,'Gold');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-0912',NULL,'unknown');
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-2583';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-2583','18-2583',27,0,27,'Gold');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-2583',NULL,'unknown');
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-0450';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-0450','18-0450',0,0,0,'Gold');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-0450',NULL,'shadow');
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-0446';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-0446','18-0446',0,0,0,'Gold');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-0446',NULL,'shadow');
+UPDATE scores SET packet_quiz=COALESCE(packet_quiz,27), packet_image=COALESCE(packet_image,48.3) WHERE season='25-26' AND round='State' AND number='18-1542';
+UPDATE scores SET packet_quiz=COALESCE(packet_quiz,30), packet_image=COALESCE(packet_image,40.6) WHERE season='25-26' AND round='State' AND number='18-1540';
+UPDATE scores SET packet_quiz=COALESCE(packet_quiz,30), packet_image=COALESCE(packet_image,33.6) WHERE season='25-26' AND round='State' AND number='18-1544';
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-2333';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-2333','18-2333',30,16.8,46.8,'Silver');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-2333',NULL,'sierra-vista');
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-2647';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-2647','18-2647',30,2.8,32.8,'Silver');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-2647',NULL,'unknown');
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-3321';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-3321','18-3321',30,0,30,'Silver');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-3321',NULL,'unknown');
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-4041';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-4041','18-4041',27,0,27,'Silver');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-4041',NULL,'unknown');
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-3969';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-3969','18-3969',27,0,27,'Silver');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-3969',NULL,'unknown');
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-3323';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-3323','18-3323',27,0,27,'Silver');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-3323',NULL,'unknown');
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-0453';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-0453','18-0453',27,0,27,'Silver');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-0453',NULL,'shadow');
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-0454';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-0454','18-0454',0,0,0,'Silver');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-0454',NULL,'shadow');
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-0456';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-0456','18-0456',0,0,0,'Silver');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-0456',NULL,'shadow');
+DELETE FROM scores WHERE season='25-26' AND round='State' AND number='18-2223';
+INSERT INTO scores (season,round,number,name,packet_quiz,packet_image,packet_total,tier) VALUES ('25-26','State','18-2223','18-2223',0,0,0,'Silver');
+INSERT OR IGNORE INTO teams (season,number,name,site) VALUES ('25-26','18-2223',NULL,'unknown');
