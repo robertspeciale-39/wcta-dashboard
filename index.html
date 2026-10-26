@@ -257,6 +257,99 @@ th.sort-desc::after{content:" ▼"}
   .hero,.mid,.tri{grid-template-columns:1fr}
   .form-grid{grid-template-columns:1fr}
 }
+
+/* ══════════════ v3 MULTI-SITE ADDITIONS (same tokens) ══════════════ */
+nav.tabs{overflow-x:auto;scrollbar-width:none}
+nav.tabs::-webkit-scrollbar{display:none}
+nav.tabs button{white-space:nowrap;flex:0 0 auto}
+.cv{display:block;width:100%}
+.panel .phead .tag{white-space:nowrap}
+.hero.wide{grid-template-columns:3fr 2fr}
+.stack{display:flex;flex-direction:column;gap:22px;min-width:0}
+.hero>*,.mid>*,.tri>*{min-width:0}
+.legend-row{display:flex;gap:14px;flex-wrap:wrap;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-top:10px}
+.legend-row .k{display:inline-flex;align-items:center;gap:6px}
+.legend-row .k i{display:inline-block;width:10px;height:10px;background:var(--c,var(--green));box-shadow:0 0 6px var(--c,var(--green))}
+.site-tag{display:inline-flex;align-items:center;gap:6px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--c,var(--mute));white-space:nowrap}
+.site-tag::before{content:"";width:7px;height:7px;background:var(--c,var(--mute));box-shadow:0 0 6px var(--c,var(--mute))}
+.home-tag{font-size:9px;color:var(--bg-0);background:var(--green);padding:1px 5px;letter-spacing:.15em;font-weight:700;margin-left:6px}
+.lb tbody tr.home{background:rgba(0,255,65,.045)}
+.lb tbody tr.hl{background:rgba(0,255,65,.09)}
+.lb tbody tr.dim-row td{color:var(--dim)}
+.scroll-y{max-height:560px;overflow-y:auto}
+.empty a,.empty button.linkish{color:var(--green);background:none;border:0;font:inherit;letter-spacing:inherit;cursor:pointer;text-decoration:underline}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.chip{--c:var(--green);background:transparent;border:1px solid var(--line);color:var(--mute);font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;padding:7px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .15s}
+.chip::before{content:"";width:7px;height:7px;background:var(--c);box-shadow:0 0 6px var(--c)}
+.chip:hover{color:var(--fg);border-color:var(--c)}
+.chip.active{color:var(--c);border-color:var(--c);background:rgba(0,255,65,.05);text-shadow:0 0 8px var(--c)}
+.chip .n{color:var(--dim);font-size:10px}
+.seg-bar{display:inline-flex;gap:0;border:1px solid var(--line)}
+.seg-bar .btn{border:0;border-right:1px dashed var(--line)}
+.seg-bar .btn:last-child{border-right:0}
+/* entry grid */
+.entry-top{margin-top:18px;display:flex;gap:18px;flex-wrap:wrap;align-items:flex-end}
+.entry-top .form-group{min-width:150px}
+.grid-tbl{width:100%;border-collapse:collapse;font-size:12px}
+.grid-tbl th{padding:8px 6px;text-align:left;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);font-weight:400;border-bottom:1px solid var(--line);white-space:nowrap;position:sticky;top:0;background:var(--bg-1);z-index:2}
+.grid-tbl th.n,.grid-tbl td.n{text-align:right}
+.grid-tbl td{padding:5px 6px;border-bottom:1px dashed var(--line-dim);vertical-align:middle;white-space:nowrap}
+.grid-tbl tr:hover td{background:rgba(0,255,65,.03)}
+.grid-tbl input.cell{width:68px;text-align:right;cursor:text;padding:6px 8px;font-variant-numeric:tabular-nums}
+.grid-tbl input.cell.name{width:170px;text-align:left}
+.grid-tbl input.cell.tot{width:78px;color:#8affb0;font-weight:700}
+.grid-tbl input.cell.bad{border-color:var(--red);color:#ff6b6b}
+.grid-tbl input.cell.saved{border-color:var(--green);box-shadow:0 0 8px rgba(0,255,65,.35)}
+.grid-tbl select{padding:5px 6px;font-size:11px}
+.grid-tbl .tnum{color:var(--green);font-weight:500}
+.grid-tbl .ro{color:var(--mute);font-variant-numeric:tabular-nums}
+.grid-tbl .rk-col{display:none}
+.show-ranks .grid-tbl .rk-col{display:table-cell}
+.status-line{font-size:11px;letter-spacing:.1em;color:var(--mute);min-height:1.6em;margin-top:10px}
+.status-line.ok{color:var(--green)}.status-line.err{color:#ff6b6b}
+.hint{font-size:11px;color:var(--mute);letter-spacing:.06em;line-height:1.6}
+.hint b{color:var(--fg);font-weight:500}
+/* sites & teams */
+.site-card{margin-top:22px}
+.site-card .phead .nm{color:var(--c,var(--green));font-weight:700;letter-spacing:.2em}
+.site-card .phead .cnt{color:var(--dim)}
+.site-card .phead .acts{margin-left:auto;display:flex;gap:8px;align-items:center}
+.site-card input[type=color]{width:26px;height:22px;padding:0;border:1px solid var(--line);background:transparent;cursor:pointer}
+.team-line{display:grid;grid-template-columns:110px minmax(140px,1fr) minmax(120px,1.2fr) 170px auto;gap:10px;align-items:center;padding:7px 0;border-bottom:1px dashed var(--line-dim);font-size:12px}
+.team-line:last-child{border-bottom:0}
+.team-line .tnum{color:var(--green)}
+.team-line .got{color:var(--dim);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.team-line input,.team-line select{width:100%}
+.btn.armed{background:var(--red);color:var(--bg-0);border-color:var(--red)}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+/* h2h */
+.h2h-row{display:grid;grid-template-columns:90px 1fr 60px 1fr 60px;gap:10px;align-items:center;margin-bottom:10px;font-size:11px}
+.h2h-row .lbl{color:var(--mute);letter-spacing:.14em;text-transform:uppercase;font-size:10px}
+.h2h-row .v{text-align:right;font-variant-numeric:tabular-nums;color:var(--fg)}
+.h2h-track{height:10px;background:rgba(0,255,65,.04);border:1px solid var(--line-dim);position:relative;overflow:hidden}
+.h2h-fill{position:absolute;inset:0 auto 0 0;background:var(--c);box-shadow:0 0 8px var(--c);opacity:.75;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.pages-note{font-size:10px;color:var(--dim);letter-spacing:.14em;text-transform:uppercase;margin-top:8px}
+@media(max-width:900px){
+  .panel .phead{flex-wrap:wrap;row-gap:4px}
+  .panel .phead .tag{white-space:normal;margin-left:0}
+  .hero.wide{grid-template-columns:1fr}
+  .registers{grid-template-columns:repeat(2,1fr)}
+  .reg{border-bottom:1px dashed var(--line-dim)}
+  .team-line{grid-template-columns:1fr 1fr}
+  .team-line .got{grid-column:1/-1}
+  .statusbar{grid-template-columns:1fr}
+  .statusbar .path,.statusbar .right{display:none}
+  .head{grid-template-columns:1fr}
+  .head .meta{text-align:left}
+  .shell{padding:14px 16px 60px}
+  .brand h1{font-size:26px}
+  .brand .mark{width:60px;height:60px;flex-basis:60px}
+}
+@media(prefers-reduced-motion:reduce){
+  .scanline,.noise,.tear,.statusbar .dot{animation:none}
+  .brand h1[data-text]::before,.brand h1[data-text]::after{animation:none;opacity:0}
+  .h2h-fill{transition:none}
+}
 </style>
 </head>
 <body>
@@ -276,8 +369,9 @@ th.sort-desc::after{content:" ▼"}
   <div>
     <span class="dot"></span>
     <span class="seg"><b>WCTA</b> CYBERPATRIOT OPS</span>
-    <span class="seg">SEASON <b id="cur-season">25-26</b></span>
-    <span class="seg">TEAMS <b id="cur-teams">16</b></span>
+    <span class="seg">SEASON <b id="cur-season">—</b></span>
+    <span class="seg">TEAMS <b id="cur-teams">—</b></span>
+    <span class="seg">SITES <b id="cur-sites">—</b></span>
   </div>
   <div class="path">
     <span class="sep">/</span><span>west-cta</span><span class="sep">/</span><span>cyberpatriot</span><span class="sep">/</span><span class="on" id="cur-page-path">overview</span>
@@ -296,392 +390,360 @@ th.sort-desc::after{content:" ▼"}
   <div class="meta">
     <span class="node">NODE://OPS-CONSOLE-01</span>
     <span class="kv">UPTIME <b id="uptime">00:00:00</b></span>
-    <span class="kv">BUILD <b>v2.6.0 // 4 SEASONS</b></span>
+    <span class="kv">BUILD <b id="build">v3.0.0 // MULTI-SITE</b></span>
     <span class="kv">STATUS <b style="color:var(--green)">◆ SECURE</b></span>
   </div>
 </header>
 
 <!-- NAV TABS -->
-<nav class="tabs">
-  <button class="active" onclick="showPage('overview',this)">Overview</button>
-  <button onclick="showPage('scoreboard',this)">Scoreboard</button>
-  <button onclick="showPage('entry',this)">Data Entry</button>
-  <button onclick="showPage('analytics',this)">Analytics</button>
-  <button onclick="showPage('semis',this)">Semi-Finals</button>
+<nav class="tabs" id="nav">
+  <button data-page="overview" class="active">WCTA Overview</button>
+  <button data-page="allsites">All Sites</button>
+  <button data-page="schools">Schools</button>
+  <button data-page="scoreboard">Scoreboard</button>
+  <button data-page="entry">Data Entry</button>
+  <button data-page="sites">Sites &amp; Teams</button>
+  <button data-page="analytics">Analytics</button>
+  <button data-page="semis">Semi-Finals</button>
   <div class="sp"></div>
 </nav>
 
-<!-- ══════════════════════════════════════════════════════════ -->
-<!-- PAGE: OVERVIEW -->
-<!-- ══════════════════════════════════════════════════════════ -->
+<!-- ═════════════ PAGE: WCTA OVERVIEW ═════════════ -->
 <div id="page-overview" class="page active">
-
   <div class="ctrl-bar" style="margin-top:18px">
-    <span class="ctrl-label">Season:</span>
-    <select id="ov-season" onchange="renderOverview()">
-      <option value="25-26">2025-26</option>
-      <option value="24-25">2024-25</option>
-      <option value="22-23">2022-23</option>
-    </select>
-    <span class="ctrl-label">Round:</span>
-    <select id="ov-round" onchange="renderOverview()">
-      <option value="R1">Round 1</option>
-      <option value="R2">Round 2</option>
-      <option value="State">State Round</option>
-      <option value="Semis">Semi-Finals</option>
-    </select>
+    <span class="ctrl-label">Season:</span><select id="ov-season" class="season-sel"></select>
+    <span class="ctrl-label">Round:</span><select id="ov-round" class="round-sel"></select>
   </div>
 
-  <!-- KPI Registers -->
   <div class="panel" style="margin-top:12px">
-    <div class="phead"><span class="id">[R-01]</span> KEY PERFORMANCE REGISTERS <span class="tag" id="ov-tag">◆ 25-26 · R1</span></div>
+    <div class="phead"><span class="id">[R-01]</span> WEST CTA · KEY PERFORMANCE REGISTERS <span class="tag" id="ov-tag">◆</span></div>
     <div class="registers" id="ov-registers"></div>
   </div>
 
-  <div class="hero">
-    <!-- Top Teams -->
+  <div class="hero wide">
     <div class="panel">
-      <div class="phead"><span class="id">[L-02]</span> LEADERBOARD <span class="tag">◆ TOP 10</span></div>
-      <div class="pbody" style="padding:0">
-        <table class="lb" id="ov-leaderboard">
-          <thead><tr>
-            <th>#</th><th>Team</th>
-            <th class="n">Linux</th><th class="n">Win</th><th class="n">Srv</th><th class="n">Packet</th>
-            <th>Total</th><th>Tier</th>
-          </tr></thead>
-          <tbody id="ov-lb-body"></tbody>
-        </table>
+      <div class="phead"><span class="id">[L-02]</span> LEADERBOARD <span class="tag">◆ SORTABLE · HOVER A TEAM</span></div>
+      <div class="pbody scroll-y" style="padding:0">
+        <table class="lb" id="ov-lb"><thead></thead><tbody></tbody></table>
       </div>
     </div>
-    <!-- Live Log + Mini Stats -->
-    <div style="display:flex;flex-direction:column;gap:22px">
+    <div class="stack">
       <div class="panel">
-        <div class="phead"><span class="id">[S-03]</span> CATEGORY AVERAGES <span class="tag">◆ WCTA</span></div>
-        <div class="pbody"><canvas id="ov-cat-chart" width="400" height="200"></canvas></div>
+        <div class="phead"><span class="id">[S-03]</span> CATEGORY RADAR <span class="tag" id="ov-radar-tag">◆ SWEEP</span></div>
+        <div class="pbody"><canvas class="cv" id="ov-radar" data-h="290"></canvas>
+          <div class="legend-row" id="ov-radar-legend"></div></div>
       </div>
       <div class="panel">
-        <div class="phead"><span class="id">[L-04]</span> EVENT LOG <span class="tag">◆ LIVE</span></div>
-        <div class="feed"><ul id="log"></ul></div>
+        <div class="phead"><span class="id">[S-04]</span> TIER RING · NATIONAL PERCENTILE</div>
+        <div class="pbody">
+          <div style="display:grid;grid-template-columns:170px 1fr;gap:14px;align-items:center">
+            <canvas class="cv" id="ov-ring" data-h="170"></canvas>
+            <div id="ov-ring-side" class="hint"></div>
+          </div>
+          <canvas class="cv" id="ov-pct" data-h="92" style="margin-top:12px"></canvas>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Tier Distribution -->
   <div class="sec">
-    <div class="sec-head"><span class="num">§ 02</span><span class="ttl">Tier Distribution — Year Over Year</span><span class="rule"></span><span class="meta">ALL SEASONS</span></div>
-    <div class="mid">
-      <div class="panel">
-        <div class="phead"><span class="id">[D-05]</span> PLATINUM / GOLD / SILVER COUNT <span class="tag">◆ YOY</span></div>
-        <div class="pbody"><canvas id="ov-tier-chart" width="680" height="260"></canvas></div>
-      </div>
-      <div class="panel">
-        <div class="phead"><span class="id">[D-06]</span> NATIONAL RANKING SUMMARY</div>
-        <div class="pbody" id="ov-rank-summary"></div>
-      </div>
+    <div class="sec-head"><span class="num">§ 02</span><span class="ttl">Team Trajectory — Round to Round</span><span class="rule"></span><span class="meta" id="ov-traj-meta"></span></div>
+    <div class="panel">
+      <div class="phead"><span class="id">[G-05]</span> TOTAL SCORE BY ROUND · EVERY WCTA TEAM <span class="tag">◆ HOVER TO ISOLATE</span></div>
+      <div class="pbody"><canvas class="cv" id="ov-traj" data-h="300"></canvas></div>
     </div>
   </div>
 
-  <!-- Score progression -->
   <div class="sec">
-    <div class="sec-head"><span class="num">§ 03</span><span class="ttl">Score Progression R1→R2</span><span class="rule"></span></div>
+    <div class="sec-head"><span class="num">§ 03</span><span class="ttl">Season-over-Season Heatmap</span><span class="rule"></span><span class="meta">WCTA AVG TOTAL · SHADED WITHIN EACH ROUND</span></div>
     <div class="panel">
-      <div class="phead"><span class="id">[G-07]</span> ROUND 1 vs ROUND 2 TOTAL SCORES <span class="tag" id="ov-prog-tag">◆ 25-26</span></div>
-      <div class="pbody"><canvas id="ov-prog-chart" width="1000" height="260"></canvas></div>
+      <div class="phead"><span class="id">[H-06]</span> SEASON × ROUND</div>
+      <div class="pbody"><canvas class="cv" id="ov-heat" data-h="230"></canvas></div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════════════ -->
-<!-- PAGE: SCOREBOARD -->
-<!-- ══════════════════════════════════════════════════════════ -->
+<!-- ═════════════ PAGE: ALL SITES ═════════════ -->
+<div id="page-allsites" class="page">
+  <div class="ctrl-bar" style="margin-top:18px">
+    <span class="ctrl-label">Season:</span><select id="as-season" class="season-sel"></select>
+    <span class="ctrl-label">Round:</span><select id="as-round" class="round-sel"></select>
+  </div>
+
+  <div class="panel" style="margin-top:12px">
+    <div class="phead"><span class="id">[R-01]</span> ALL SITES · COMBINED REGISTERS <span class="tag" id="as-tag">◆</span></div>
+    <div class="registers" id="as-registers"></div>
+  </div>
+
+  <div class="hero wide">
+    <div class="panel">
+      <div class="phead"><span class="id">[L-02]</span> COMBINED LEADERBOARD <span class="tag">◆ SORTABLE</span></div>
+      <div class="pbody scroll-y" style="padding:0">
+        <table class="lb" id="as-lb"><thead></thead><tbody></tbody></table>
+      </div>
+    </div>
+    <div class="stack">
+      <div class="panel">
+        <div class="phead"><span class="id">[C-03]</span> SITE COMPARISON <span class="tag">◆ AVG vs TOP TEAM</span></div>
+        <div class="pbody"><canvas class="cv" id="as-cmp" data-h="240"></canvas>
+          <div class="legend-row"><span class="k" style="--c:var(--green)"><i></i>Site average (bar)</span><span class="k" style="--c:#d7ffe1"><i></i>Top team (marker)</span></div></div>
+      </div>
+      <div class="panel">
+        <div class="phead"><span class="id">[C-04]</span> IMAGE vs PACKET SPLIT</div>
+        <div class="pbody"><canvas class="cv" id="as-split" data-h="220"></canvas>
+          <div class="legend-row"><span class="k" style="--c:var(--green)"><i></i>Image points</span><span class="k" style="--c:var(--gold)"><i></i>Packet points</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="panel">
+      <div class="phead"><span class="id">[S-05]</span> CATEGORY RADAR · BY SCHOOL</div>
+      <div class="pbody"><canvas class="cv" id="as-radar" data-h="300"></canvas><div class="legend-row" id="as-radar-legend"></div></div>
+    </div>
+    <div class="panel">
+      <div class="phead"><span class="id">[G-06]</span> SCHOOL AVERAGE BY ROUND <span class="tag" id="as-trend-tag">◆</span></div>
+      <div class="pbody"><canvas class="cv" id="as-trend" data-h="300"></canvas><div class="legend-row" id="as-trend-legend"></div></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head"><span class="num">§ 02</span><span class="ttl">School × Round Heatmap</span><span class="rule"></span><span class="meta">AVG TOTAL · SHADED WITHIN EACH ROUND</span></div>
+    <div class="panel">
+      <div class="phead"><span class="id">[H-07]</span> SCHOOL × ROUND <span class="tag" id="as-heat-tag">◆</span></div>
+      <div class="pbody"><canvas class="cv" id="as-heat" data-h="260"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════ PAGE: SCHOOLS ═════════════ -->
+<div id="page-schools" class="page">
+  <div class="chips" id="sc-chips"></div>
+  <div class="ctrl-bar" style="margin-top:8px">
+    <span class="ctrl-label">Season:</span><select id="sc-season" class="season-sel"></select>
+    <span class="ctrl-label">Round:</span><select id="sc-round" class="round-sel"></select>
+  </div>
+  <div id="sc-body">
+    <div class="panel" style="margin-top:12px">
+      <div class="phead"><span class="id">[R-01]</span> <span id="sc-title">SCHOOL</span> · REGISTERS <span class="tag" id="sc-tag">◆</span></div>
+      <div class="registers" id="sc-registers"></div>
+    </div>
+    <div class="hero wide">
+      <div class="panel">
+        <div class="phead"><span class="id">[L-02]</span> TEAMS <span class="tag">◆ SORTABLE</span></div>
+        <div class="pbody scroll-y" style="padding:0">
+          <table class="lb" id="sc-lb"><thead></thead><tbody></tbody></table>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="panel">
+          <div class="phead"><span class="id">[S-03]</span> CATEGORY RADAR · vs WEST CTA</div>
+          <div class="pbody"><canvas class="cv" id="sc-radar" data-h="280"></canvas><div class="legend-row" id="sc-radar-legend"></div></div>
+        </div>
+        <div class="panel">
+          <div class="phead"><span class="id">[S-04]</span> HEAD TO HEAD · AVERAGES</div>
+          <div class="pbody" id="sc-h2h"></div>
+        </div>
+      </div>
+    </div>
+    <div class="sec">
+      <div class="sec-head"><span class="num">§ 02</span><span class="ttl">Team Trajectory</span><span class="rule"></span><span class="meta" id="sc-traj-meta"></span></div>
+      <div class="panel">
+        <div class="phead"><span class="id">[G-05]</span> TOTAL SCORE BY ROUND</div>
+        <div class="pbody"><canvas class="cv" id="sc-traj" data-h="280"></canvas></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════ PAGE: SCOREBOARD ═════════════ -->
 <div id="page-scoreboard" class="page">
   <div class="ctrl-bar" style="margin-top:18px">
-    <span class="ctrl-label">Season:</span>
-    <select id="sb-season" onchange="renderScoreboard()">
-      <option value="ALL">All Seasons</option>
-      <option value="25-26">2025-26</option>
-      <option value="24-25">2024-25</option>
-      <option value="22-23">2022-23</option>
-    </select>
+    <span class="ctrl-label">Season:</span><select id="sb-season"></select>
     <span class="ctrl-label">Round:</span>
-    <select id="sb-round" onchange="renderScoreboard()">
-      <option value="ALL">All Rounds</option>
-      <option value="R1">Round 1</option>
-      <option value="R2">Round 2</option>
-      <option value="State">State</option>
-      <option value="Semis">Semi-Finals</option>
+    <select id="sb-round">
+      <option value="ALL">All Rounds</option><option value="R1">Round 1</option><option value="R2">Round 2</option>
+      <option value="State">State</option><option value="Semis">Semi-Finals</option>
     </select>
+    <span class="ctrl-label">School:</span><select id="sb-site"></select>
     <span class="ctrl-label">Tier:</span>
-    <select id="sb-tier" onchange="renderScoreboard()">
-      <option value="ALL">All Tiers</option>
-      <option value="Platinum">Platinum</option>
-      <option value="Gold">Gold</option>
-      <option value="Silver">Silver</option>
+    <select id="sb-tier">
+      <option value="ALL">All Tiers</option><option value="Platinum">Platinum</option><option value="Gold">Gold</option><option value="Silver">Silver</option>
     </select>
     <span class="ctrl-label">Search:</span>
-    <input id="sb-search" type="text" placeholder="team name..." style="width:160px" oninput="renderScoreboard()">
-    <button class="btn" onclick="exportCSV()">↓ Export CSV</button>
+    <input id="sb-search" type="text" placeholder="team name or #..." style="width:170px">
+    <button class="btn" id="sb-csv">↓ Export CSV</button>
   </div>
   <div class="panel" style="margin-top:8px">
     <div class="phead"><span class="id">[T-01]</span> SCOREBOARD <span class="tag" id="sb-count">◆ — ROWS</span></div>
     <div style="overflow-x:auto">
       <table class="lb" id="sb-table">
         <thead><tr>
-          <th class="sortable" data-col="season" onclick="sbSort('season')">Season</th>
-          <th class="sortable" data-col="round" onclick="sbSort('round')">Round</th>
-          <th class="sortable" data-col="rank" onclick="sbSort('rank')">#</th>
-          <th class="sortable" data-col="name" onclick="sbSort('name')">Team</th>
-          <th class="n sortable" data-col="linux" onclick="sbSort('linux')">Linux</th>
-          <th class="n sortable" data-col="win_desktop" onclick="sbSort('win_desktop')">Win Desktop</th>
-          <th class="n sortable" data-col="win_server" onclick="sbSort('win_server')">Win Server</th>
-          <th class="n sortable" data-col="packet_total" onclick="sbSort('packet_total')">Packet</th>
-          <th class="n sortable" data-col="adjust" onclick="sbSort('adjust')">Adjust</th>
-          <th class="n sortable" data-col="total" onclick="sbSort('total')">Total</th>
-          <th class="n sortable" data-col="nv_rank" onclick="sbSort('nv_rank')">NV Rank</th>
-          <th class="n sortable" data-col="natl_rank" onclick="sbSort('natl_rank')">Natl Rank</th>
-          <th class="n sortable" data-col="natl_pct" onclick="sbSort('natl_pct')">Natl %</th>
-          <th>Tier</th><th>Adv.</th>
+          <th class="sortable" data-col="season">Season</th>
+          <th class="sortable" data-col="round">Round</th>
+          <th class="sortable" data-col="rank">#</th>
+          <th class="sortable" data-col="name">Team</th>
+          <th class="sortable" data-col="siteName">School</th>
+          <th class="n sortable" data-col="linux">Linux</th>
+          <th class="n sortable" data-col="win_desktop">Win Desktop</th>
+          <th class="n sortable" data-col="win_server">Win Server</th>
+          <th class="n sortable" data-col="packet_total">Packet</th>
+          <th class="n sortable" data-col="adjust">Adjust</th>
+          <th class="n sortable" data-col="total">Total</th>
+          <th class="n sortable" data-col="nv_rank">NV Rank</th>
+          <th class="n sortable" data-col="natl_rank">Natl Rank</th>
+          <th class="n sortable" data-col="pct">Natl %</th>
+          <th class="sortable" data-col="tier">Tier</th><th>Adv.</th>
         </tr></thead>
         <tbody id="sb-body"></tbody>
       </table>
     </div>
     <div class="pager">
-      <button class="btn" onclick="sbPage(-1)">◂ Prev</button>
+      <button class="btn" id="sb-prev">◂ Prev</button>
       <span id="sb-page-info">Page 1</span>
-      <button class="btn" onclick="sbPage(1)">Next ▸</button>
+      <button class="btn" id="sb-next">Next ▸</button>
       <span style="margin-left:8px" id="sb-total-info"></span>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════════════ -->
-<!-- PAGE: DATA ENTRY -->
-<!-- ══════════════════════════════════════════════════════════ -->
+<!-- ═════════════ PAGE: DATA ENTRY ═════════════ -->
 <div id="page-entry" class="page">
-  <div style="margin-top:18px;display:grid;grid-template-columns:2fr 1fr;gap:22px">
-    <div>
-      <div class="panel">
-        <div class="phead"><span class="id">[E-01]</span> ADD / EDIT TEAM SCORE <span class="tag">◆ FORM</span></div>
-        <div class="pbody">
-          <div class="form-section">
-            <h3>// Round Context</h3>
-            <div class="form-grid">
-              <div class="form-group">
-                <label>Season</label>
-                <select id="e-season">
-                  <option value="25-26">2025-26</option>
-                  <option value="24-25">2024-25</option>
-                  <option value="22-23">2022-23</option>
-                  <option value="NEW">+ New Season...</option>
-                </select>
-              </div>
-              <div class="form-group" id="e-new-season-wrap" style="display:none">
-                <label>New Season (e.g. 26-27)</label>
-                <input type="text" id="e-new-season" placeholder="26-27">
-              </div>
-              <div class="form-group">
-                <label>Round</label>
-                <select id="e-round">
-                  <option value="R1">Round 1</option>
-                  <option value="R2">Round 2</option>
-                  <option value="State">State Round</option>
-                  <option value="Semis">Semi-Finals</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label>Teams Nationwide (total competing)</label>
-                <input type="number" id="e-nationwide" placeholder="e.g. 1964">
-              </div>
-            </div>
-          </div>
+  <div class="entry-top">
+    <div class="form-group"><label for="e-season">Season</label><select id="e-season"></select></div>
+    <div class="form-group" id="e-new-season-wrap" style="display:none"><label for="e-new-season">New Season</label>
+      <div style="display:flex;gap:8px"><input type="text" id="e-new-season" placeholder="27-28" style="width:90px"><button class="btn primary" id="e-new-season-go">Create</button></div></div>
+    <div class="form-group"><label>Round</label><div class="seg-bar" id="e-round-bar"></div></div>
+    <div class="form-group"><label for="e-site">School</label><select id="e-site"></select></div>
+    <div class="form-group"><label for="e-nationwide">Teams Nationwide (this round)</label><input type="number" id="e-nationwide" placeholder="e.g. 1964" style="width:150px"></div>
+    <div class="form-group"><label>&nbsp;</label><button class="btn" id="e-ranks-btn">+ Show Rankings</button></div>
+  </div>
 
-          <div class="form-section">
-            <h3>// Team Information</h3>
-            <div class="form-grid">
-              <div class="form-group">
-                <label>Team Number</label>
-                <input type="text" id="e-number" placeholder="e.g. 18-1535">
-              </div>
-              <div class="form-group">
-                <label>Team Name</label>
-                <input type="text" id="e-name" placeholder="e.g. Shake and Bake">
-              </div>
-              <div class="form-group">
-                <label>Tier (after round)</label>
-                <select id="e-tier">
-                  <option value="">— Not assigned —</option>
-                  <option value="Platinum">Platinum</option>
-                  <option value="Gold">Gold</option>
-                  <option value="Silver">Silver</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label>Advanced to Next Round?</label>
-                <select id="e-adv">
-                  <option value="">— No / N/A —</option>
-                  <option value="Adv.">Yes — Advanced</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-section">
-            <h3>// Scores</h3>
-            <div class="form-grid">
-              <div class="form-group">
-                <label>Linux Score</label>
-                <input type="number" id="e-linux" placeholder="0-100" min="0" max="100">
-              </div>
-              <div class="form-group">
-                <label>Windows Desktop Score</label>
-                <input type="number" id="e-win-desktop" placeholder="0-100" min="0" max="100">
-              </div>
-              <div class="form-group">
-                <label>Windows Server Score</label>
-                <input type="number" id="e-win-server" placeholder="0-100" min="0" max="100">
-              </div>
-              <div class="form-group">
-                <label>Packet Quiz Score</label>
-                <input type="number" id="e-pkt-quiz" placeholder="0-30" min="0" max="30">
-              </div>
-              <div class="form-group">
-                <label>Packet Image Score</label>
-                <input type="number" id="e-pkt-image" placeholder="0.0" step="0.1">
-              </div>
-              <div class="form-group">
-                <label>Adjustment / Penalty</label>
-                <input type="number" id="e-adjust" placeholder="e.g. -5">
-              </div>
-              <div class="form-group">
-                <label>Total Score (calculated or manual)</label>
-                <input type="number" id="e-total" placeholder="auto-calculated">
-              </div>
-            </div>
-          </div>
-
-          <div class="form-section">
-            <h3>// Rankings</h3>
-            <div class="form-grid">
-              <div class="form-group">
-                <label>NV Rank</label>
-                <input type="number" id="e-nv-rank" placeholder="e.g. 2">
-              </div>
-              <div class="form-group">
-                <label>National Rank</label>
-                <input type="number" id="e-natl-rank" placeholder="e.g. 124">
-              </div>
-              <div class="form-group">
-                <label>National Percentile (0.000-1.000)</label>
-                <input type="number" id="e-natl-pct" placeholder="e.g. 0.063" step="0.001" min="0" max="1">
-              </div>
-            </div>
-          </div>
-
-          <div class="form-actions">
-            <button class="btn primary" onclick="saveEntry()">◆ Save Entry</button>
-            <button class="btn" onclick="clearForm()">Clear Form</button>
-          </div>
-          <div class="msg" id="e-msg"></div>
-        </div>
-      </div>
+  <div class="panel" style="margin-top:16px">
+    <div class="phead"><span class="id">[E-01]</span> QUICK ENTRY GRID <span class="tag" id="e-tag">◆</span></div>
+    <div class="pbody" id="e-grid-wrap" style="padding:0;overflow:auto;max-height:70vh">
+      <table class="grid-tbl" id="e-grid">
+        <thead><tr>
+          <th>Team #</th><th>Name</th><th>School</th>
+          <th class="n">Linux</th><th class="n">Windows</th><th class="n">Server</th>
+          <th class="n">Pkt Quiz</th><th class="n">Pkt Image</th><th class="n">Adjust</th><th class="n">Total</th>
+          <th>Tier</th><th>Adv.</th>
+          <th class="n rk-col">NV Rank</th><th class="n rk-col">Natl Rank</th><th class="n rk-col">Natl %</th>
+          <th></th>
+        </tr></thead>
+        <tbody id="e-body"></tbody>
+      </table>
     </div>
+  </div>
+  <div class="status-line" id="e-status" role="status" aria-live="polite"></div>
+  <p class="hint" style="margin-top:6px">Type a score and press <b>Tab</b> or <b>Enter</b>; it saves when you leave the box. <b>Enter</b> drops to the same column on the next team. Total adds itself up (images + packet + adjust) unless you type your own. Natl % fills in from Natl Rank ÷ Teams Nationwide. Teams come from <button class="btn" style="padding:2px 8px" data-goto="sites">Sites &amp; Teams</button>.</p>
 
-    <!-- Right: recent entries + instructions -->
-    <div style="display:flex;flex-direction:column;gap:16px">
-      <div class="panel">
-        <div class="phead"><span class="id">[E-02]</span> RECENT ENTRIES <span class="tag">◆ SESSION</span></div>
-        <div class="pbody" style="padding:10px" id="e-recent">
-          <div class="empty">No entries this session</div>
-        </div>
-      </div>
-      <div class="panel">
-        <div class="phead"><span class="id">[E-03]</span> DATA MANAGEMENT</div>
-        <div class="pbody">
-          <div style="display:flex;flex-direction:column;gap:10px">
-            <button class="btn" onclick="exportJSON()" style="width:100%;text-align:left">↓ Export Data as JSON</button>
-            <button class="btn" onclick="exportCSV()" style="width:100%;text-align:left">↓ Export Data as CSV</button>
-            <div style="font-size:10px;color:var(--mute);letter-spacing:.08em;margin-top:4px">
-              Entries save to the shared Cloudflare D1 database — everyone sees updates. A cached copy keeps the dashboard readable offline.
-            </div>
-            <hr style="border:none;border-top:1px dashed var(--line-dim);margin:4px 0">
-            <button class="btn danger" onclick="resetData()" style="width:100%;text-align:left">↻ Reload From Server</button>
-          </div>
+  <div class="hero" style="margin-top:22px">
+    <div class="panel">
+      <div class="phead"><span class="id">[E-02]</span> RECENT SAVES <span class="tag">◆ SESSION</span></div>
+      <div class="pbody" style="padding:10px" id="e-recent"><div class="empty">No saves this session</div></div>
+    </div>
+    <div class="panel">
+      <div class="phead"><span class="id">[E-03]</span> DATA MANAGEMENT</div>
+      <div class="pbody">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <button class="btn" id="e-json" style="width:100%;text-align:left">↓ Export Data as JSON</button>
+          <button class="btn" id="e-csv" style="width:100%;text-align:left">↓ Export Data as CSV</button>
+          <div class="hint">Entries save to the shared Cloudflare D1 database, so everyone sees updates. A cached copy keeps the dashboard readable offline.</div>
+          <hr style="border:none;border-top:1px dashed var(--line-dim);margin:4px 0">
+          <button class="btn" id="e-reload" style="width:100%;text-align:left">↻ Reload From Server</button>
+          <button class="btn danger" id="e-forget" style="width:100%;text-align:left">✕ Forget Saved Passcode</button>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════════════ -->
-<!-- PAGE: ANALYTICS -->
-<!-- ══════════════════════════════════════════════════════════ -->
+<!-- ═════════════ PAGE: SITES & TEAMS ═════════════ -->
+<div id="page-sites" class="page">
+  <div class="ctrl-bar" style="margin-top:18px">
+    <span class="ctrl-label">Season:</span><select id="st-season"></select>
+    <span class="hint" style="margin-left:6px">Team numbers change every season, so teams are listed per season. Schools carry over.</span>
+  </div>
+  <div class="hero">
+    <div class="panel">
+      <div class="phead"><span class="id">[M-01]</span> ADD A SCHOOL</div>
+      <div class="pbody">
+        <div class="form-grid">
+          <div class="form-group full-width"><label for="st-site-name">School or site name</label><input id="st-site-name" type="text" maxlength="60" placeholder="e.g. Foothill High School"></div>
+        </div>
+        <div class="form-actions"><button class="btn primary" id="st-site-add">◆ Add School</button></div>
+        <div class="status-line" id="st-site-status"></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="phead"><span class="id">[M-02]</span> ADD TEAMS</div>
+      <div class="pbody">
+        <div class="form-grid">
+          <div class="form-group full-width"><label for="st-team-nums">Team numbers (one or many)</label><input id="st-team-nums" type="text" placeholder="19-1521, 19-1522 19-1523"></div>
+          <div class="form-group full-width"><label for="st-team-site">School</label><select id="st-team-site"></select></div>
+        </div>
+        <div class="form-actions"><button class="btn primary" id="st-team-add">◆ Add Teams</button></div>
+        <div class="status-line" id="st-team-status"></div>
+      </div>
+    </div>
+  </div>
+  <div id="st-list"></div>
+</div>
+
+<!-- ═════════════ PAGE: ANALYTICS ═════════════ -->
 <div id="page-analytics" class="page">
-  <div class="sec" style="margin-top:18px">
-    <div class="sec-head"><span class="num">§ 04</span><span class="ttl">YoY Tier Advancement — State Round</span><span class="rule"></span></div>
+  <div class="ctrl-bar" style="margin-top:18px">
+    <span class="ctrl-label">School:</span><select id="an-site" class="site-sel"></select>
+  </div>
+  <div class="sec" style="margin-top:12px">
+    <div class="sec-head"><span class="num">§ 04</span><span class="ttl">YoY Tier Advancement — State Round</span><span class="rule"></span><span class="meta" id="an-meta"></span></div>
     <div class="panel">
       <div class="phead"><span class="id">[A-06]</span> ADVANCEMENT TO SEMIS BY SEASON &amp; TIER</div>
       <div class="pbody" id="an-adv-body"></div>
     </div>
     <div class="panel" style="margin-top:22px">
       <div class="phead"><span class="id">[A-07]</span> TEAMS ADVANCED TO SEMIS — BY TIER &amp; SEASON</div>
-      <div class="pbody"><canvas id="an-adv-chart" width="1000" height="240"></canvas>
-        <div style="margin-top:10px;display:flex;gap:16px;font-size:10px;color:var(--mute)">
-          <span><span style="color:#FFD700">■</span> PLATINUM</span>
-          <span><span style="color:#FFA500">■</span> GOLD</span>
-          <span><span style="color:#C0C0C0">■</span> SILVER</span>
-        </div>
+      <div class="pbody"><canvas class="cv" id="an-adv-chart" data-h="240"></canvas>
+        <div class="legend-row"><span class="k" style="--c:#FFD700"><i></i>Platinum</span><span class="k" style="--c:#FFA500"><i></i>Gold</span><span class="k" style="--c:#C0C0C0"><i></i>Silver</span></div>
+      </div>
+    </div>
+    <div class="panel" style="margin-top:22px">
+      <div class="phead"><span class="id">[A-08]</span> TIER COUNT AFTER ROUND 2 — YEAR OVER YEAR</div>
+      <div class="pbody"><canvas class="cv" id="an-tier-chart" data-h="240"></canvas>
+        <div class="legend-row"><span class="k" style="--c:#FFD700"><i></i>Platinum</span><span class="k" style="--c:#FFA500"><i></i>Gold</span><span class="k" style="--c:#C0C0C0"><i></i>Silver</span></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════════════ -->
-<!-- PAGE: SEMI-FINALS -->
-<!-- ══════════════════════════════════════════════════════════ -->
+<!-- ═════════════ PAGE: SEMI-FINALS ═════════════ -->
 <div id="page-semis" class="page">
   <div class="ctrl-bar" style="margin-top:18px">
-    <span class="ctrl-label">Season:</span>
-    <select id="sm-season" onchange="renderSemis()">
-      <option value="25-26">2025-26</option>
-      <option value="24-25">2024-25</option>
-      <option value="22-23">2022-23</option>
-    </select>
+    <span class="ctrl-label">Season:</span><select id="sm-season"></select>
+    <span class="ctrl-label">School:</span><select id="sm-site" class="site-sel"></select>
   </div>
-
   <div class="stat-grid" id="sm-stats" style="margin-top:14px"></div>
-
-  <div class="hero">
-    <div class="panel">
-      <div class="phead"><span class="id">[SF-01]</span> SEMI-FINALS LEADERBOARD <span class="tag" id="sm-tag">◆ 25-26</span></div>
-      <div style="overflow-x:auto">
-        <table class="lb" id="sm-table">
-          <thead><tr>
-            <th>#</th><th>Team</th><th class="n">Linux</th>
-            <th class="n">Win Srv</th><th class="n">Img Score</th>
-            <th class="n">Cisco/PT</th><th class="n">Web</th>
-            <th class="n">Total</th><th class="n">Natl Rank</th><th class="n">Natl %</th><th>Tier</th>
-          </tr></thead>
-          <tbody id="sm-body"></tbody>
-        </table>
-      </div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:20px">
-      <div class="panel">
-        <div class="phead"><span class="id">[SF-02]</span> TIER REPRESENTATION — NATIONAL</div>
-        <div class="pbody" id="sm-tier-nat"></div>
-      </div>
-      <div class="panel">
-        <div class="phead"><span class="id">[SF-03]</span> TIER REPRESENTATION — NEVADA</div>
-        <div class="pbody" id="sm-tier-nv"></div>
-      </div>
+  <div class="panel">
+    <div class="phead"><span class="id">[SF-01]</span> SEMI-FINALS LEADERBOARD <span class="tag" id="sm-tag">◆</span></div>
+    <div style="overflow-x:auto">
+      <table class="lb" id="sm-table">
+        <thead><tr>
+          <th>#</th><th>Team</th><th>School</th><th class="n">Linux</th>
+          <th class="n">Win Srv</th><th class="n">Img Score</th>
+          <th class="n">Cisco/PT</th><th class="n">Web</th>
+          <th class="n">Total</th><th class="n">Natl Rank</th><th class="n">Natl %</th><th>Tier</th>
+        </tr></thead>
+        <tbody id="sm-body"></tbody>
+      </table>
     </div>
   </div>
-
   <div class="sec">
     <div class="sec-head"><span class="num">§ 06</span><span class="ttl">Semis Tier Comparison — All Seasons</span><span class="rule"></span></div>
     <div class="panel">
-      <div class="phead"><span class="id">[SF-04]</span> WCTA TEAMS IN SEMIS BY TIER &amp; SEASON</div>
-      <div class="pbody"><canvas id="sm-hist" width="1000" height="220"></canvas></div>
+      <div class="phead"><span class="id">[SF-04]</span> TEAMS IN SEMIS BY TIER &amp; SEASON <span class="tag" id="sm-hist-tag">◆</span></div>
+      <div class="pbody"><canvas class="cv" id="sm-hist" data-h="220"></canvas>
+        <div class="legend-row"><span class="k" style="--c:#FFD700"><i></i>Platinum</span><span class="k" style="--c:#FFA500"><i></i>Gold</span><span class="k" style="--c:#C0C0C0"><i></i>Silver</span></div></div>
     </div>
   </div>
 </div>
@@ -696,640 +758,1332 @@ th.sort-desc::after{content:" ▼"}
 </div><!-- /content -->
 
 <script>
-
+'use strict';
 // ═══════════════════════════════════════════════════════════════
-// STATE & DATA MANAGEMENT
+// CONSTANTS & STATE
 // ═══════════════════════════════════════════════════════════════
-let DB={seasons:{}};
-const CACHE_KEY='wcta_cp_cache';
-async function loadDB(){
-  try{
-    const res=await fetch('/api/data');
-    if(!res.ok)throw new Error('HTTP '+res.status);
-    DB=await res.json();
-    try{localStorage.setItem(CACHE_KEY,JSON.stringify(DB));}catch(e){}
-  }catch(err){
-    const cached=localStorage.getItem(CACHE_KEY);
-    if(cached){
-      try{DB=JSON.parse(cached);showBanner('OFFLINE MODE — showing last cached data');return;}catch(e){}
-    }
-    DB={seasons:{}};
-    showBanner('CANNOT REACH SERVER — no cached data available yet');
-  }
-}
-function cacheDB(){ try{localStorage.setItem(CACHE_KEY,JSON.stringify(DB));}catch(e){} }
-async function resetData(){ if(confirm('Reload all data from the server? Unsynced local view will be replaced.')){localStorage.removeItem(CACHE_KEY);await loadDB();renderAll();showMsg('e-msg','Data reloaded from server','ok');}}
-function showBanner(text){
-  let b=document.getElementById('conn-banner');
-  if(!b){b=document.createElement('div');b.id='conn-banner';
-    b.style.cssText='position:fixed;top:0;left:0;right:0;z-index:99;background:#2a1a00;color:var(--amber,#FFA500);border-bottom:1px solid var(--amber,#FFA500);font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;text-align:center;padding:6px';
-    document.body.appendChild(b);}
-  b.textContent='◆ '+text;
-}
+const CACHE_KEY = 'wcta_cp_cache_v3';
+const KEY_STORE = 'wcta_admin_key';
+const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const ROUNDS = ['R1', 'R2', 'State', 'Semis'];
+const ROUND_NAME = { R1: 'Round 1', R2: 'Round 2', State: 'State Round', Semis: 'Semi-Finals' };
+const ROUND_SHORT = { R1: 'R1', R2: 'R2', State: 'STATE', Semis: 'SEMIS' };
+const HOME = 'west-cta';
+const C = { green: '#00FF41', greenD: '#0b9e35', red: '#C41E3A', gold: '#FFD700', amber: '#FFA500', silver: '#C0C0C0',
+  fg: '#CFE8D0', mute: '#6b7a7a', dim: '#3a4a4a', bright: '#e9ffec', bg: '#0A0E27' };
+const TIER_COLOR = { Platinum: C.gold, Gold: C.amber, Silver: C.silver };
+const TEAM_COLORS = ['#00FF41', '#00BFFF', '#FFD700', '#FF69B4', '#FFA500', '#7CFC00', '#DDA0DD', '#20B2AA', '#F0E68C',
+  '#87CEEB', '#FF6347', '#9370DB', '#C0C0C0', '#32CD32', '#FF4500', '#E9FFEC'];
+const SITE_FALLBACK = ['#00BFFF', '#FF69B4', '#DDA0DD', '#20B2AA', '#F0E68C', '#FF6347', '#87CEEB', '#FFA500', '#9370DB', '#7CFC00'];
 
-function getRound(season,round){
-  return DB.seasons[season]?.rounds[round]||null;
-}
-function getAllRows(){
-  const rows=[];
-  for(const[sKey,sv] of Object.entries(DB.seasons)){
-    for(const[rKey,rv] of Object.entries(sv.rounds)){
-      for(const[i,t] of (rv.teams||[]).entries()){
-        rows.push({...t,season:sKey,round:rKey,rank:i+1});
-      }
-    }
-  }
-  return rows;
-}
+let DB = { seasons: {}, sites: [], teams: [], migrated: true };
+const VIEW = { season: null, round: null };          // shared by WCTA / All Sites / Schools
+const HL = { team: null };                           // hovered team (leaderboard → charts)
+let SC_SITE = null;                                  // selected school on Schools tab
+try { SC_SITE = localStorage.getItem('wcta_sc_site'); } catch (e) {}
+let CUR_PAGE = 'overview';
 
 // ═══════════════════════════════════════════════════════════════
 // UTILITIES
 // ═══════════════════════════════════════════════════════════════
 const $ = id => document.getElementById(id);
-const pad = n => String(n).padStart(2,'0');
-const fmt = v => v==null?'—':typeof v==='number'?v.toFixed(1):v;
-const fmtPct = v => v==null?'—':(v*100).toFixed(1)+'%';
-const fmtInt = v => v==null?'—':Math.round(v).toLocaleString();
-
-const TIER_COLORS = {Platinum:'var(--gold)',Gold:'var(--amber)',Silver:'var(--silver)'};
-const ROUND_ORDER = {R1:0,R2:1,State:2,Semis:3};
-const SEASON_ORDER = {'22-23':0,'23-24':1,'24-25':2,'25-26':3};
-
-function tierClass(t){return t==='Platinum'?'plat':t==='Gold'?'gold':t==='Silver'?'silv':'';}
-
-function drawBar(canvas,data,labels,color='#00FF41',max=null){
-  if(!canvas)return;
-  const ctx=canvas.getContext('2d');
-  const W=canvas.width,H=canvas.height;
-  ctx.clearRect(0,0,W,H);
-  if(!data||!data.length)return;
-  const M={t:20,r:10,b:40,l:30};
-  const cW=W-M.l-M.r, cH=H-M.t-M.b;
-  const mx=max||Math.max(...data.filter(v=>v!=null),1);
-  const bW=Math.max(4,cW/data.length-4);
-  // grid
-  ctx.strokeStyle='rgba(0,255,65,.07)';ctx.lineWidth=1;
-  for(let i=0;i<=4;i++){
-    const y=M.t+cH*(1-i/4);
-    ctx.beginPath();ctx.moveTo(M.l,y);ctx.lineTo(W-M.r,y);ctx.stroke();
-    ctx.fillStyle='#3a4a4a';ctx.font='9px JetBrains Mono';ctx.textAlign='right';
-    ctx.fillText(Math.round(mx*i/4),M.l-2,y+3);
-  }
-  // bars
-  data.forEach((v,i)=>{
-    if(v==null)return;
-    const x=M.l+i*(cW/data.length)+(cW/data.length-bW)/2;
-    const bH=cH*(v/mx);
-    const y=M.t+cH-bH;
-    // glow
-    ctx.shadowColor=color;ctx.shadowBlur=6;
-    ctx.fillStyle=color;ctx.globalAlpha=0.75;
-    ctx.fillRect(x,y,bW,bH);
-    ctx.globalAlpha=1;ctx.shadowBlur=0;
-    // label
-    ctx.fillStyle='#6b7a7a';ctx.font='8px JetBrains Mono';ctx.textAlign='center';
-    const lbl=(labels[i]||'').substring(0,8);
-    ctx.fillText(lbl,x+bW/2,H-M.b+12);
-    // value
-    if(bH>14){ctx.fillStyle='#e9ffec';ctx.font='8px JetBrains Mono';ctx.fillText(Math.round(v),x+bW/2,y+10);}
-  });
+const pad = n => String(n).padStart(2, '0');
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const fmt = v => v == null ? '—' : (Number.isInteger(v) ? String(v) : (Math.round(v * 10) / 10).toFixed(1));
+const fmtPct = v => v == null ? '—' : (v * 100).toFixed(1) + '%';
+const mean = a => a.length ? a.reduce((s, v) => s + v, 0) / a.length : null;
+const nn = v => v != null && !Number.isNaN(v);
+const tierClass = t => t === 'Platinum' ? 'plat' : t === 'Gold' ? 'gold' : t === 'Silver' ? 'silv' : '';
+function rgba(hex, a) {
+  const h = (hex || '#00FF41').replace('#', '');
+  const n = parseInt(h.length === 3 ? h.split('').map(x => x + x).join('') : h, 16);
+  return `rgba(${(n >> 16) & 255},${(n >> 8) & 255},${n & 255},${a})`;
 }
-
-function drawLineChart(canvas,datasets,xlabels){
-  if(!canvas)return;
-  const ctx=canvas.getContext('2d');
-  const W=canvas.width,H=canvas.height;
-  ctx.clearRect(0,0,W,H);
-  const M={t:20,r:20,b:36,l:40};
-  const cW=W-M.l-M.r,cH=H-M.t-M.b;
-  const allVals=datasets.flatMap(d=>d.data.filter(v=>v!=null));
-  if(!allVals.length)return;
-  const mx=Math.max(...allVals)*1.05;
-  // grid
-  ctx.strokeStyle='rgba(0,255,65,.07)';ctx.lineWidth=1;
-  for(let i=0;i<=4;i++){
-    const y=M.t+cH*(1-i/4);
-    ctx.beginPath();ctx.moveTo(M.l,y);ctx.lineTo(W-M.r,y);ctx.stroke();
-    ctx.fillStyle='#3a4a4a';ctx.font='9px JetBrains Mono';ctx.textAlign='right';
-    ctx.fillText(Math.round(mx*i/4),M.l-2,y+3);
-  }
-  // x labels
-  xlabels.forEach((l,i)=>{
-    const x=M.l+(i/(xlabels.length-1))*cW;
-    ctx.fillStyle='#6b7a7a';ctx.font='9px JetBrains Mono';ctx.textAlign='center';
-    ctx.fillText(l,x,H-4);
-  });
-  // lines
-  datasets.forEach(ds=>{
-    const pts=ds.data.map((v,i)=>({x:M.l+(i/(xlabels.length-1||1))*cW,y:v!=null?M.t+cH*(1-v/mx):null}));
-    ctx.strokeStyle=ds.color;ctx.lineWidth=1.8;ctx.shadowColor=ds.color;ctx.shadowBlur=4;
-    ctx.beginPath();let first=true;
-    pts.forEach(p=>{if(p.y==null)return;if(first){ctx.moveTo(p.x,p.y);first=false;}else ctx.lineTo(p.x,p.y);});
-    ctx.stroke();ctx.shadowBlur=0;
-    pts.forEach(p=>{if(p.y==null)return;ctx.fillStyle=ds.color;ctx.beginPath();ctx.arc(p.x,p.y,3,0,Math.PI*2);ctx.fill();});
-  });
+function niceMax(v) {
+  if (!(v > 0)) return 10;
+  const mag = Math.pow(10, Math.floor(Math.log10(v))), n = v / mag;
+  return (n <= 1 ? 1 : n <= 1.5 ? 1.5 : n <= 2 ? 2 : n <= 2.5 ? 2.5 : n <= 3 ? 3 : n <= 4 ? 4 : n <= 5 ? 5 : n <= 6 ? 6 : n <= 8 ? 8 : 10) * mag;
 }
+const imgOf = t => { const p = [t.linux, t.win_desktop, t.win_server].filter(nn); return p.length ? p.reduce((s, v) => s + v, 0) : (t.img_score ?? null); };
+const pktOf = t => t.packet_total ?? ((nn(t.packet_quiz) || nn(t.packet_image)) ? (t.packet_quiz || 0) + (t.packet_image || 0) : null);
+const byTotal = (a, b) => (b.total ?? -1e9) - (a.total ?? -1e9) || pktSort(a, b);
+const pktSort = (a, b) => (pktOf(b) ?? -1e9) - (pktOf(a) ?? -1e9);
 
-function drawGroupedBar(canvas,groups,labels,colors){
-  if(!canvas)return;
-  const ctx=canvas.getContext('2d');
-  const W=canvas.width,H=canvas.height;
-  ctx.clearRect(0,0,W,H);
-  const M={t:20,r:20,b:36,l:30};
-  const cW=W-M.l-M.r,cH=H-M.t-M.b;
-  const mx=Math.max(...groups.flatMap(g=>g.values.filter(v=>v!=null)))||1;
-  const gW=cW/labels.length;
-  const bPad=4,bW=(gW-bPad*(groups.length+1))/groups.length;
-  // grid
-  ctx.strokeStyle='rgba(0,255,65,.07)';ctx.lineWidth=1;
-  for(let i=0;i<=4;i++){
-    const y=M.t+cH*(1-i/4);
-    ctx.beginPath();ctx.moveTo(M.l,y);ctx.lineTo(W-M.r,y);ctx.stroke();
-    ctx.fillStyle='#3a4a4a';ctx.font='9px JetBrains Mono';ctx.textAlign='right';
-    ctx.fillText(Math.round(mx*i/4),M.l-2,y+3);
+// ═══════════════════════════════════════════════════════════════
+// DATA LOAD
+// ═══════════════════════════════════════════════════════════════
+function normalize(d) {
+  d = d || {};
+  d.seasons = d.seasons || {};
+  d.sites = (d.sites && d.sites.length) ? d.sites : [{ id: HOME, name: 'West CTA', is_home: 1, color: C.green, sort: 0 }];
+  d.teams = d.teams || [];
+  for (const s of Object.values(d.seasons)) for (const r of Object.values(s.rounds || {})) for (const t of (r.teams || [])) t.site = t.site || HOME;
+  return d;
+}
+async function loadDB() {
+  try {
+    const res = await fetch('/api/data', { cache: 'no-store' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    DB = normalize(await res.json());
+    try { localStorage.setItem(CACHE_KEY, JSON.stringify(DB)); } catch (e) {}
+    hideBanner();
+    if (DB.migrated === false) showBanner('DATABASE MIGRATION NOT RUN YET — run migrations/001_multi_school.sql in the D1 console to enable schools');
+  } catch (err) {
+    let cached = null;
+    try { cached = localStorage.getItem(CACHE_KEY); } catch (e) {}
+    if (cached) { try { DB = normalize(JSON.parse(cached)); showBanner('OFFLINE MODE — showing last cached data'); return; } catch (e) {} }
+    DB = normalize({});
+    showBanner('CANNOT REACH SERVER — no cached data available yet');
   }
-  labels.forEach((l,i)=>{
-    const gx=M.l+i*gW;
-    ctx.fillStyle='#6b7a7a';ctx.font='9px JetBrains Mono';ctx.textAlign='center';
-    ctx.fillText(l,gx+gW/2,H-4);
-    groups.forEach((g,j)=>{
-      const v=g.values[i];if(v==null)return;
-      const x=gx+bPad+(j*(bW+bPad));
-      const bH=cH*(v/mx);
-      const y=M.t+cH-bH;
-      ctx.shadowColor=colors[j];ctx.shadowBlur=5;
-      ctx.fillStyle=colors[j];ctx.globalAlpha=.7;
-      ctx.fillRect(x,y,bW,bH);
-      ctx.globalAlpha=1;ctx.shadowBlur=0;
-      if(bH>14){ctx.fillStyle='#e9ffec';ctx.font='8px JetBrains Mono';ctx.textAlign='center';ctx.fillText(v,x+bW/2,y+9);}
+}
+function cacheDB() { try { localStorage.setItem(CACHE_KEY, JSON.stringify(DB)); } catch (e) {} }
+function showBanner(text) {
+  let b = $('conn-banner');
+  if (!b) {
+    b = document.createElement('div'); b.id = 'conn-banner';
+    b.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99;background:#2a1a00;color:var(--amber,#FFA500);border-bottom:1px solid var(--amber,#FFA500);font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;text-align:center;padding:6px';
+    document.body.appendChild(b);
+  }
+  b.textContent = '◆ ' + text;
+}
+function hideBanner() { const b = $('conn-banner'); if (b) b.remove(); }
+
+// ── derived lookups ──
+function siteList() {
+  return [...DB.sites].sort((a, b) => (a.id === 'unknown') - (b.id === 'unknown') || (a.sort ?? 100) - (b.sort ?? 100) || a.name.localeCompare(b.name));
+}
+function site(id) { return DB.sites.find(s => s.id === id) || { id, name: id === 'unknown' ? 'Unknown' : id }; }
+function siteName(id) { return site(id).name; }
+function siteColor(id) {
+  const s = site(id);
+  if (s.color) return s.color;
+  if (id === HOME) return C.green;
+  const i = siteList().findIndex(x => x.id === id);
+  return SITE_FALLBACK[(i < 0 ? 0 : i) % SITE_FALLBACK.length];
+}
+const seasonsAsc = () => Object.keys(DB.seasons).sort();
+const seasonsDesc = () => seasonsAsc().reverse();
+const getRound = (s, r) => DB.seasons[s]?.rounds?.[r] || null;
+const roundsIn = s => ROUNDS.filter(r => getRound(s, r));
+const nationwide = (s, r) => getRound(s, r)?.teams_nationwide || null;
+function pctOf(t, s, r) {
+  if (t.natl_pct != null) return t.natl_pct;
+  const n = nationwide(s, r);
+  return (t.natl_rank != null && n) ? t.natl_rank / n : null;
+}
+function rowsFor(season, round, siteId) {
+  const rd = getRound(season, round);
+  let ts = rd ? (rd.teams || []) : [];
+  if (siteId && siteId !== 'ALL') ts = ts.filter(t => t.site === siteId);
+  return ts;
+}
+function registry(season) {
+  const m = new Map();
+  for (const t of DB.teams) if (t.season === season) m.set(t.number, { number: t.number, name: t.name || null, site: t.site || 'unknown' });
+  for (const r of Object.values(DB.seasons[season]?.rounds || {})) for (const t of (r.teams || [])) {
+    if (!t.number) continue;
+    const ex = m.get(t.number);
+    if (!ex) m.set(t.number, { number: t.number, name: t.name !== t.number ? t.name : null, site: t.site });
+    else if (!ex.name && t.name && t.name !== t.number) ex.name = t.name;
+  }
+  return [...m.values()].sort((a, b) => a.number.localeCompare(b.number, undefined, { numeric: true }));
+}
+const teamLabel = t => (t.name && t.name !== t.number) ? t.name : ('Team ' + t.number);
+
+// ═══════════════════════════════════════════════════════════════
+// MOTION: DECRYPT TEXT
+// ═══════════════════════════════════════════════════════════════
+const GLY = '01ABCDEF#$%&*<>/\\|=+?';
+function decrypt(el, text) {
+  text = String(text);
+  if (RM) { el.textContent = text; return; }
+  cancelAnimationFrame(el._raf);
+  const start = performance.now(), dur = 650 + Math.random() * 400;
+  const step = now => {
+    const p = Math.min(1, (now - start) / dur), n = Math.floor(p * text.length);
+    let s = text.slice(0, n);
+    for (let i = n; i < text.length; i++) s += /\s/.test(text[i]) ? text[i] : GLY[(Math.random() * GLY.length) | 0];
+    el.textContent = s;
+    if (p < 1) el._raf = requestAnimationFrame(step);
+  };
+  el._raf = requestAnimationFrame(step);
+}
+function decryptAll(root) { root.querySelectorAll('[data-dc]').forEach(el => decrypt(el, el.dataset.dc)); }
+
+// ═══════════════════════════════════════════════════════════════
+// MOTION: CHART ENGINE (canvas, one rAF loop, only visible charts draw)
+// ═══════════════════════════════════════════════════════════════
+const CH = new Map();
+const DPR = () => Math.min(2, window.devicePixelRatio || 1);
+const tt = $('tt');
+function chart(id, draw, hit) {
+  const c = $(id);
+  if (!c) return null;
+  let ch = CH.get(id);
+  if (!ch) {
+    ch = { id, c, ctx: c.getContext('2d'), W: 0, H: 0, mx: null, my: null, hover: null, geom: null };
+    CH.set(id, ch);
+    c.addEventListener('mousemove', ev => {
+      const r = c.getBoundingClientRect();
+      ch.mx = ev.clientX - r.left; ch.my = ev.clientY - r.top;
+      const h = ch.hit ? ch.hit(ch, ch.mx, ch.my) : null;
+      ch.hover = h ? h.key : null;
+      if (h && h.html) { tt.innerHTML = h.html; tt.style.display = 'block'; placeTip(ev.clientX, ev.clientY); }
+      else tt.style.display = 'none';
+      ch.dirty = true;
     });
+    c.addEventListener('mouseleave', () => { ch.mx = ch.my = null; ch.hover = null; tt.style.display = 'none'; ch.dirty = true; });
+  }
+  ch.draw = draw; ch.hit = hit || null; ch.t0 = performance.now(); ch.dirty = true; ch.hover = null;
+  return ch;
+}
+function placeTip(x, y) {
+  const w = tt.offsetWidth, h = tt.offsetHeight;
+  tt.style.left = Math.min(window.innerWidth - w - 8, x + 14) + 'px';
+  tt.style.top = Math.max(8, Math.min(window.innerHeight - h - 8, y + 14)) + 'px';
+}
+function replayPage(pageId) {
+  const now = performance.now();
+  for (const ch of CH.values()) if (ch.c.closest('#page-' + pageId)) { ch.t0 = now; ch.dirty = true; }
+}
+function markDirty() { for (const ch of CH.values()) ch.dirty = true; }
+function frame(now) {
+  for (const ch of CH.values()) {
+    if (!ch.draw || !ch.c.offsetParent) continue;
+    const w = Math.max(200, ch.c.clientWidth), h = +ch.c.dataset.h || 240, d = DPR();
+    if (ch.W !== w || ch.H !== h || ch.d !== d) {
+      ch.W = w; ch.H = h; ch.d = d;
+      ch.c.width = Math.round(w * d); ch.c.height = Math.round(h * d); ch.c.style.height = h + 'px';
+      ch.dirty = true;
+    }
+    const p = RM ? 1 : Math.min(1, (now - ch.t0) / 1150);
+    if (RM && !ch.dirty) continue;
+    const e = 1 - Math.pow(1 - p, 3);
+    const ctx = ch.ctx;
+    ctx.setTransform(d, 0, 0, d, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+    ctx.save();
+    try { ch.draw(ctx, w, h, RM ? 0 : now / 1000, e, ch); } catch (err) { console.error(ch.id, err); }
+    ctx.restore();
+    ch.dirty = false;
+  }
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+
+// shared drawing bits
+const FONT = (px, w) => `${w || 400} ${px}px "JetBrains Mono", monospace`;
+function noData(ctx, W, H, msg) {
+  ctx.fillStyle = C.mute; ctx.font = FONT(11); ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.fillText(msg || 'NO DATA FOR THIS SELECTION', W / 2, H / 2);
+}
+function glowDot(ctx, x, y, r, color, blur) {
+  ctx.save(); ctx.shadowColor = color; ctx.shadowBlur = blur || 10; ctx.fillStyle = color;
+  ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill(); ctx.restore();
+}
+function yGrid(ctx, M, W, H, max, ticks, fmtFn) {
+  ctx.strokeStyle = 'rgba(0,255,65,.07)'; ctx.lineWidth = 1;
+  ctx.fillStyle = C.dim; ctx.font = FONT(9); ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
+  const cH = H - M.t - M.b;
+  for (let i = 0; i <= ticks; i++) {
+    const y = M.t + cH * (1 - i / ticks);
+    ctx.beginPath(); ctx.moveTo(M.l, y); ctx.lineTo(W - M.r, y); ctx.stroke();
+    ctx.fillText((fmtFn || Math.round)(max * i / ticks), M.l - 6, y);
+  }
+}
+
+// ── RADAR (sweep arm + blips) ──
+// cfg: { axes:[{label,max}], series:[{key,name,color,vals:[], fill, dash, width}] }
+function drawRadar(cfg) {
+  return (ctx, W, H, t, e, ch) => {
+    const n = cfg.axes.length;
+    const series = cfg.series.filter(s => s.vals.some(nn));
+    const cx = W / 2, cy = H / 2 + 4, R = Math.max(40, Math.min(W / 2 - (W < 480 ? 80 : 64), H / 2 - 30));
+    const ang = i => -Math.PI / 2 + i * Math.PI * 2 / n;
+    // rings
+    for (let k = 1; k <= 4; k++) {
+      ctx.beginPath();
+      for (let i = 0; i <= n; i++) { const a = ang(i % n), r = R * k / 4; i ? ctx.lineTo(cx + Math.cos(a) * r, cy + Math.sin(a) * r) : ctx.moveTo(cx + Math.cos(a) * r, cy + Math.sin(a) * r); }
+      ctx.strokeStyle = k === 4 ? 'rgba(0,255,65,.22)' : 'rgba(0,255,65,.08)'; ctx.lineWidth = 1; ctx.stroke();
+    }
+    for (let i = 0; i < n; i++) {
+      ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + Math.cos(ang(i)) * R, cy + Math.sin(ang(i)) * R);
+      ctx.strokeStyle = 'rgba(0,255,65,.10)'; ctx.stroke();
+    }
+    // sweep
+    const sweep = ((t * 1.05) % (Math.PI * 2)) - Math.PI / 2;
+    if (!RM && ctx.createConicGradient) {
+      const trail = 1.1, g = ctx.createConicGradient(sweep - trail, cx, cy), f = trail / (Math.PI * 2);
+      g.addColorStop(0, 'rgba(0,255,65,0)'); g.addColorStop(f * .98, 'rgba(0,255,65,.20)'); g.addColorStop(f, 'rgba(0,255,65,0)'); g.addColorStop(1, 'rgba(0,255,65,0)');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2); ctx.fill();
+      ctx.save(); ctx.shadowColor = C.green; ctx.shadowBlur = 8;
+      ctx.strokeStyle = 'rgba(138,255,176,.75)'; ctx.lineWidth = 1.2;
+      ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + Math.cos(sweep) * R, cy + Math.sin(sweep) * R); ctx.stroke(); ctx.restore();
+    }
+    // labels
+    ctx.font = FONT(10); ctx.textBaseline = 'middle';
+    const lead = series[0];
+    for (let i = 0; i < n; i++) {
+      const a = ang(i), x = cx + Math.cos(a) * (R + 16), y = cy + Math.sin(a) * (R + 16);
+      ctx.textAlign = Math.abs(Math.cos(a)) < .2 ? 'center' : Math.cos(a) > 0 ? 'left' : 'right';
+      const hasAny = series.some(s => nn(s.vals[i]));
+      ctx.fillStyle = hasAny ? C.mute : C.dim;
+      ctx.fillText(cfg.axes[i].label.toUpperCase(), x, y - 6);
+      ctx.fillStyle = hasAny ? C.fg : C.dim;
+      ctx.fillText(lead && nn(lead.vals[i]) ? fmt(lead.vals[i]) + ' / ' + fmt(cfg.axes[i].max) : 'N/A', x, y + 7);
+    }
+    if (!series.length) { noData(ctx, W, H); return; }
+    // polygons
+    const pts = [];
+    series.forEach(s => {
+      const p = s.vals.map((v, i) => { const r = R * Math.min(1, (v || 0) / (cfg.axes[i].max || 1)) * e; return { x: cx + Math.cos(ang(i)) * r, y: cy + Math.sin(ang(i)) * r, v, i, s }; });
+      ctx.beginPath(); p.forEach((q, i) => i ? ctx.lineTo(q.x, q.y) : ctx.moveTo(q.x, q.y)); ctx.closePath();
+      if (s.fill) { ctx.fillStyle = rgba(s.color, .12); ctx.fill(); }
+      ctx.save(); ctx.setLineDash(s.dash ? [4, 4] : []); ctx.shadowColor = s.color; ctx.shadowBlur = s.dash ? 0 : 8;
+      ctx.strokeStyle = s.color; ctx.lineWidth = s.width || 1.6; ctx.stroke(); ctx.restore();
+      pts.push(...p);
+    });
+    // blips light up as the sweep passes
+    pts.forEach(q => {
+      if (!nn(q.v)) return;
+      let d = (sweep - ang(q.i)) % (Math.PI * 2); if (d < 0) d += Math.PI * 2;
+      const glow = RM ? .4 : Math.max(0, 1 - d / 1.4);
+      glowDot(ctx, q.x, q.y, 2.4 + glow * 2.6, q.s.color, 4 + glow * 14);
+    });
+    ch.geom = pts;
+  };
+}
+function radarHit(ch, mx, my) {
+  if (!ch.geom) return null;
+  let best = null, bd = 196;
+  for (const q of ch.geom) { const d = (q.x - mx) ** 2 + (q.y - my) ** 2; if (d < bd && nn(q.v)) { bd = d; best = q; } }
+  return best ? { key: best.s.key, html: `<b style="color:${best.s.color}">${esc(best.s.name)}</b><br>${esc(ch.axes[best.i].label)}: ${fmt(best.v)}` } : null;
+}
+
+// ── TRAJECTORY (lines draw on, pulses ride them) ──
+// cfg: { xlabels:[], series:[{key,name,color,data:[]}], hlKey:()=>key }
+function drawLines(cfg) {
+  return (ctx, W, H, t, e, ch) => {
+    const M = { l: 44, r: 18, t: 16, b: 30 };
+    const all = cfg.series.flatMap(s => s.data.filter(nn));
+    if (!all.length || cfg.xlabels.length < 1) { noData(ctx, W, H, cfg.empty); ch.geom = null; return; }
+    const max = niceMax(Math.max(...all) * 1.04);
+    yGrid(ctx, M, W, H, max, 4);
+    const cW = W - M.l - M.r, cH = H - M.t - M.b, nX = cfg.xlabels.length;
+    const X = i => nX === 1 ? M.l + cW / 2 : M.l + cW * i / (nX - 1), Y = v => M.t + cH * (1 - v / max);
+    ctx.fillStyle = C.mute; ctx.font = FONT(10); ctx.textBaseline = 'alphabetic';
+    cfg.xlabels.forEach((l, i) => { ctx.textAlign = nX === 1 ? 'center' : i === 0 ? 'left' : i === nX - 1 ? 'right' : 'center'; ctx.fillText(l, X(i), H - 8); });
+    const hl = ch.hover || (cfg.hlKey && cfg.hlKey());
+    const clipX = M.l + cW * e + 2;
+    ctx.save(); ctx.beginPath(); ctx.rect(0, 0, clipX, H); ctx.clip();
+    const geom = [];
+    const order = [...cfg.series].sort((a, b) => (a.key === hl) - (b.key === hl));
+    order.forEach(s => {
+      const on = !hl || s.key === hl;
+      const pts = s.data.map((v, i) => nn(v) ? { x: X(i), y: Y(v), v, i } : null);
+      ctx.save();
+      ctx.globalAlpha = on ? (hl ? 1 : .78) : .12;
+      ctx.strokeStyle = s.color; ctx.lineWidth = s.key === hl ? 2.6 : 1.6;
+      ctx.shadowColor = s.color; ctx.shadowBlur = on ? 6 : 0;
+      ctx.beginPath(); let pen = false;
+      pts.forEach(p => { if (!p) { pen = false; return; } pen ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y); pen = true; });
+      ctx.stroke();
+      pts.forEach(p => { if (p) { ctx.fillStyle = s.color; ctx.beginPath(); ctx.arc(p.x, p.y, s.key === hl ? 4 : 2.6, 0, Math.PI * 2); ctx.fill(); } });
+      ctx.restore();
+      pts.forEach(p => p && geom.push({ ...p, s }));
+      // pulses
+      if (!RM && on) {
+        const segs = [];
+        for (let i = 1; i < pts.length; i++) if (pts[i] && pts[i - 1]) segs.push([pts[i - 1], pts[i]]);
+        const len = segs.reduce((a, [p, q]) => a + Math.hypot(q.x - p.x, q.y - p.y), 0);
+        if (len > 0) {
+          const k = cfg.series.indexOf(s);
+          let u = ((t * 0.22 + k * 0.137) % 1) * len;
+          for (const [p, q] of segs) {
+            const L = Math.hypot(q.x - p.x, q.y - p.y);
+            if (u <= L) { const f = u / L; glowDot(ctx, p.x + (q.x - p.x) * f, p.y + (q.y - p.y) * f, s.key === hl ? 3.2 : 2.2, '#eaffef', 14); break; }
+            u -= L;
+          }
+        }
+      }
+      if (s.key === hl) {
+        const last = [...pts].reverse().find(Boolean);
+        if (last) { ctx.fillStyle = s.color; ctx.font = FONT(10, 700); ctx.textAlign = last.x > W - 140 ? 'right' : 'left'; ctx.fillText(s.name, last.x + (last.x > W - 140 ? -8 : 8), last.y - 8); }
+      }
+    });
+    ctx.restore();
+    ch.geom = geom; ch.xl = cfg.xlabels;
+  };
+}
+function linesHit(ch, mx, my) {
+  if (!ch.geom) return null;
+  let best = null, bd = 324;
+  for (const q of ch.geom) { const d = (q.x - mx) ** 2 + (q.y - my) ** 2; if (d < bd) { bd = d; best = q; } }
+  return best ? { key: best.s.key, html: `<b style="color:${best.s.color}">${esc(best.s.name)}</b><br>${esc(ch.xl[best.i])}: ${fmt(best.v)}` } : null;
+}
+
+// ── TIER RING ──
+function drawRing(cfg) {
+  return (ctx, W, H, t, e) => {
+    const cx = W / 2, cy = H / 2, R = Math.min(W, H) / 2 - 14, th = 13;
+    // rotating tick ring
+    const rot = RM ? 0 : t * .35;
+    for (let i = 0; i < 60; i++) {
+      const a = rot + i * Math.PI * 2 / 60, big = i % 5 === 0;
+      ctx.strokeStyle = big ? 'rgba(0,255,65,.45)' : 'rgba(0,255,65,.14)'; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(cx + Math.cos(a) * (R + 5), cy + Math.sin(a) * (R + 5)); ctx.lineTo(cx + Math.cos(a) * (R + (big ? 11 : 8)), cy + Math.sin(a) * (R + (big ? 11 : 8))); ctx.stroke();
+    }
+    ctx.lineWidth = th; ctx.strokeStyle = 'rgba(0,255,65,.06)';
+    ctx.beginPath(); ctx.arc(cx, cy, R - th / 2, 0, Math.PI * 2); ctx.stroke();
+    const tot = cfg.parts.reduce((a, p) => a + p.n, 0);
+    let a0 = -Math.PI / 2;
+    if (tot) cfg.parts.forEach(p => {
+      if (!p.n) return;
+      const sw = (p.n / tot) * Math.PI * 2 * e;
+      ctx.save(); ctx.shadowColor = p.color; ctx.shadowBlur = 10; ctx.strokeStyle = p.color; ctx.lineWidth = th;
+      ctx.beginPath(); ctx.arc(cx, cy, R - th / 2, a0 + .03, a0 + Math.max(.03, sw - .03)); ctx.stroke(); ctx.restore();
+      a0 += sw;
+    });
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillStyle = '#e9ffec'; ctx.font = FONT(26, 800); ctx.fillText(String(cfg.center), cx, cy - 6);
+    ctx.fillStyle = C.mute; ctx.font = FONT(9); ctx.fillText(cfg.sub, cx, cy + 16);
+  };
+}
+
+// ── PERCENTILE STRIP (scanning beam) ──
+function drawPct(cfg) {
+  return (ctx, W, H, t, e, ch) => {
+    const M = { l: 10, r: 10 }, y0 = 28, h = 30, cW = W - M.l - M.r;
+    const X = p => M.l + cW * Math.min(1, Math.max(0, p));
+    ctx.font = FONT(9); ctx.textBaseline = 'alphabetic';
+    // bands
+    [[0, .1, .10], [.1, .25, .06], [.25, .5, .03]].forEach(([a, b, al]) => { ctx.fillStyle = `rgba(0,255,65,${al})`; ctx.fillRect(X(a), y0, X(b) - X(a), h); });
+    ctx.strokeStyle = 'rgba(0,255,65,.22)'; ctx.strokeRect(M.l + .5, y0 + .5, cW - 1, h - 1);
+    ctx.fillStyle = C.mute; ctx.textAlign = 'left'; ctx.fillText('NATIONAL PERCENTILE  ◂ BETTER', M.l, 14);
+    [[0, 'TOP'], [.1, '10%'], [.25, '25%'], [.5, '50%'], [1, '100%']].forEach(([p, l]) => { ctx.fillStyle = C.dim; ctx.textAlign = p === 0 ? 'left' : p === 1 ? 'right' : 'center'; ctx.fillText(l, X(p), y0 + h + 14); });
+    const pts = cfg.teams.filter(x => nn(x.pct));
+    if (!pts.length) { ctx.fillStyle = C.mute; ctx.textAlign = 'center'; ctx.fillText('NO NATIONAL RANKS ENTERED FOR THIS ROUND', W / 2, y0 + h / 2 + 3); ch.geom = null; return; }
+    const beam = RM ? -999 : M.l + ((t * .16) % 1.15) * cW;
+    if (!RM) {
+      const g = ctx.createLinearGradient(beam - 40, 0, beam, 0);
+      g.addColorStop(0, 'rgba(0,255,65,0)'); g.addColorStop(1, 'rgba(0,255,65,.28)');
+      ctx.fillStyle = g; ctx.fillRect(Math.max(M.l, beam - 40), y0, Math.min(40, beam - M.l), h);
+    }
+    const geom = [];
+    pts.forEach(p => {
+      const x = X(p.pct);
+      if (x > M.l + cW * e + 1) return;
+      const flash = Math.max(0, 1 - Math.abs(beam - x) / 22);
+      ctx.save(); ctx.shadowColor = p.color; ctx.shadowBlur = 4 + flash * 14; ctx.strokeStyle = p.color; ctx.lineWidth = 2 + flash;
+      ctx.beginPath(); ctx.moveTo(x, y0 + 3); ctx.lineTo(x, y0 + h - 3); ctx.stroke(); ctx.restore();
+      geom.push({ x, p });
+    });
+    ch.geom = geom;
+  };
+}
+function pctHit(ch, mx) {
+  if (!ch.geom) return null;
+  let best = null, bd = 8;
+  for (const g of ch.geom) { const d = Math.abs(g.x - mx); if (d < bd) { bd = d; best = g; } }
+  return best ? { key: best.p.key, html: `<b>${esc(best.p.name)}</b><br>Top ${fmtPct(best.p.pct)} · #${best.p.rank ?? '—'} natl` } : null;
+}
+
+// ── HEATMAP (staggered reveal + scanning column) ──
+// cfg: { rows:[{label,color}], cols:[], vals:[[v]], counts:[[n]] }
+function drawHeat(cfg) {
+  return (ctx, W, H, t, e, ch) => {
+    const lw = W < 520 ? 82 : 128, hh = 26;
+    const nR = cfg.rows.length, nC = cfg.cols.length;
+    if (!nR || !nC) { noData(ctx, W, H); ch.geom = null; return; }
+    const cw = (W - lw) / nC, rh = (H - hh) / nR;
+    ctx.font = FONT(10); ctx.textBaseline = 'middle';
+    cfg.cols.forEach((c, j) => { ctx.fillStyle = C.mute; ctx.textAlign = 'center'; ctx.fillText(cw < 110 && cfg.shortCols ? cfg.shortCols[j] : c, lw + cw * j + cw / 2, hh / 2); });
+    // per-column normalize
+    const rng = cfg.cols.map((_, j) => { const v = cfg.vals.map(r => r[j]).filter(nn); return v.length ? [Math.min(...v), Math.max(...v)] : null; });
+    const scan = RM ? -1 : ((t * .5) % (nC + 1.5)) - .5;
+    const geom = [];
+    cfg.rows.forEach((r, i) => {
+      ctx.textAlign = 'left'; ctx.fillStyle = r.color || C.fg; ctx.font = FONT(10, 500);
+      const lbl = r.label.length > (lw / 7) ? r.label.slice(0, Math.floor(lw / 7) - 1) + '…' : r.label;
+      ctx.fillText(lbl, 4, hh + rh * i + rh / 2);
+      cfg.cols.forEach((_, j) => {
+        const x = lw + cw * j + 2, y = hh + rh * i + 2, w = cw - 4, h = rh - 4;
+        const v = cfg.vals[i][j];
+        const stagger = (i + j) / (nR + nC);
+        const appear = Math.max(0, Math.min(1, (e - stagger * .6) / .4));
+        ctx.strokeStyle = 'rgba(0,255,65,.12)'; ctx.lineWidth = 1; ctx.strokeRect(x + .5, y + .5, w - 1, h - 1);
+        if (nn(v) && appear > 0) {
+          const [mn, mx] = rng[j]; const I = mx > mn ? (v - mn) / (mx - mn) : .7;
+          const near = Math.max(0, 1 - Math.abs(scan - j - .5));
+          ctx.save(); ctx.globalAlpha = appear;
+          ctx.fillStyle = `rgba(0,255,65,${.07 + I * .5 + near * .12})`;
+          if (I > .85) { ctx.shadowColor = C.green; ctx.shadowBlur = 10 + near * 8; }
+          ctx.fillRect(x + 1, y + 1, w - 2, h - 2); ctx.restore();
+          ctx.globalAlpha = appear; ctx.fillStyle = I > .55 ? '#04140a' : C.bright; ctx.font = FONT(rh > 30 ? 12 : 10, 700); ctx.textAlign = 'center';
+          ctx.fillText(fmt(v), x + w / 2, y + h / 2); ctx.globalAlpha = 1;
+        } else if (!nn(v)) { ctx.fillStyle = C.dim; ctx.textAlign = 'center'; ctx.font = FONT(10); ctx.fillText('·', x + w / 2, y + h / 2); }
+        geom.push({ x, y, w, h, i, j, v });
+      });
+    });
+    ch.geom = geom;
+  };
+}
+function heatHit(cfg) {
+  return (ch, mx, my) => {
+    const g = ch.geom && ch.geom.find(q => mx >= q.x && mx <= q.x + q.w && my >= q.y && my <= q.y + q.h);
+    if (!g || !nn(g.v)) return null;
+    const n = cfg.counts ? cfg.counts[g.i][g.j] : null;
+    return { key: g.i + ':' + g.j, html: `<b>${esc(cfg.rows[g.i].label)}</b> · ${esc(cfg.cols[g.j])}<br>Avg total ${fmt(g.v)}${n ? ` · ${n} team${n === 1 ? '' : 's'}` : ''}` };
+  };
+}
+
+// ── HORIZONTAL BARS (site avg + top marker, traveling pulse) ──
+function drawHBars(cfg) {
+  return (ctx, W, H, t, e, ch) => {
+    if (!cfg.items.length) { noData(ctx, W, H, cfg.empty); ch.geom = null; return; }
+    const lw = W < 520 ? 90 : 120, vw = 54, rh = Math.min(34, (H - 6) / cfg.items.length);
+    const max = cfg.max || Math.max(...cfg.items.map(x => Math.max(x.a || 0, x.b || 0))) || 1;
+    const tw = W - lw - vw - 8, geom = [];
+    cfg.items.forEach((it, i) => {
+      const y = 4 + i * rh, bh = Math.min(14, rh - 12), by = y + (rh - bh) / 2;
+      ctx.font = FONT(10, 500); ctx.textBaseline = 'middle'; ctx.textAlign = 'left'; ctx.fillStyle = it.color;
+      const lbl = it.label.length > lw / 7 ? it.label.slice(0, Math.floor(lw / 7) - 1) + '…' : it.label;
+      ctx.fillText(lbl, 0, by + bh / 2);
+      ctx.fillStyle = 'rgba(0,255,65,.04)'; ctx.fillRect(lw, by, tw, bh);
+      ctx.strokeStyle = 'rgba(0,255,65,.10)'; ctx.strokeRect(lw + .5, by + .5, tw - 1, bh - 1);
+      const fw = tw * Math.min(1, (it.a || 0) / max) * e;
+      const g = ctx.createLinearGradient(lw, 0, lw + fw, 0); g.addColorStop(0, rgba(it.color, .25)); g.addColorStop(1, rgba(it.color, .8));
+      ctx.fillStyle = g; ctx.fillRect(lw, by, fw, bh);
+      glowDot(ctx, lw + fw, by + bh / 2, 2.2, '#eaffef', 10);
+      if (!RM && fw > 20) { const u = ((t * .35 + i * .21) % 1) * fw; ctx.fillStyle = 'rgba(234,255,239,.35)'; ctx.fillRect(lw + u, by, 3, bh); }
+      if (nn(it.b)) { const mx = lw + tw * Math.min(1, it.b / max) * e; ctx.fillStyle = '#d7ffe1'; ctx.fillRect(mx - 1, by - 4, 2, bh + 8); }
+      ctx.fillStyle = C.fg; ctx.font = FONT(11, 700); ctx.textAlign = 'right'; ctx.fillText(fmt(it.a), W, by + bh / 2);
+      geom.push({ y, h: rh, it });
+    });
+    ch.geom = geom;
+  };
+}
+function hbarsHit(ch, mx, my) {
+  const g = ch.geom && ch.geom.find(q => my >= q.y && my < q.y + q.h);
+  return g ? { key: g.it.label, html: `<b style="color:${g.it.color}">${esc(g.it.label)}</b><br>${g.it.tip}` } : null;
+}
+
+// ── SPLIT (stacked 100% image vs packet) ──
+function drawSplit(cfg) {
+  return (ctx, W, H, t, e, ch) => {
+    if (!cfg.items.length) { noData(ctx, W, H, cfg.empty); ch.geom = null; return; }
+    const lw = W < 520 ? 90 : 120, vw = 108, rh = Math.min(34, (H - 6) / cfg.items.length), tw = W - lw - vw - 8, geom = [];
+    cfg.items.forEach((it, i) => {
+      const y = 4 + i * rh, bh = Math.min(14, rh - 12), by = y + (rh - bh) / 2;
+      const T = (it.img || 0) + (it.pkt || 0), ip = T ? it.img / T : 0;
+      ctx.font = FONT(10, 500); ctx.textBaseline = 'middle'; ctx.textAlign = 'left'; ctx.fillStyle = it.color;
+      const lbl = it.label.length > lw / 7 ? it.label.slice(0, Math.floor(lw / 7) - 1) + '…' : it.label;
+      ctx.fillText(lbl, 0, by + bh / 2);
+      const w1 = tw * ip * e, w2 = tw * (1 - ip) * e;
+      ctx.save(); ctx.shadowColor = C.green; ctx.shadowBlur = 6; ctx.fillStyle = 'rgba(0,255,65,.7)'; ctx.fillRect(lw, by, w1, bh);
+      ctx.shadowColor = C.gold; ctx.fillStyle = 'rgba(255,215,0,.65)'; ctx.fillRect(lw + tw - w2, by, w2, bh); ctx.restore();
+      ctx.strokeStyle = 'rgba(0,255,65,.10)'; ctx.strokeRect(lw + .5, by + .5, tw - 1, bh - 1);
+      ctx.fillStyle = C.fg; ctx.font = FONT(10); ctx.textAlign = 'right';
+      ctx.fillText(T ? `IMG ${Math.round(ip * 100)}% · PKT ${100 - Math.round(ip * 100)}%` : '—', W, by + bh / 2);
+      geom.push({ y, h: rh, it: { ...it, tip: `Image ${fmt(it.img)} pts · Packet ${fmt(it.pkt)} pts<br>${it.n} team${it.n === 1 ? '' : 's'}` } });
+    });
+    ch.geom = geom;
+  };
+}
+
+// ── GROUPED BARS (analytics / semis) ──
+function drawGrouped(cfg) {
+  return (ctx, W, H, t, e, ch) => {
+    const M = { t: 20, r: 12, b: 30, l: 32 };
+    const vals = cfg.groups.flatMap(g => g.values.filter(nn));
+    if (!cfg.labels.length || !vals.some(v => v > 0)) { noData(ctx, W, H, cfg.empty); return; }
+    const mx = Math.max(4, ...vals);
+    yGrid(ctx, M, W, H, mx, 4);
+    const cW = W - M.l - M.r, cH = H - M.t - M.b, gW = cW / cfg.labels.length, bp = 4;
+    const bW = Math.min(46, (gW - bp * (cfg.groups.length + 1)) / cfg.groups.length);
+    const off = (gW - (bW * cfg.groups.length + bp * (cfg.groups.length - 1))) / 2;
+    cfg.labels.forEach((l, i) => {
+      const gx = M.l + i * gW;
+      ctx.fillStyle = C.mute; ctx.font = FONT(10); ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic'; ctx.fillText(l, gx + gW / 2, H - 8);
+      cfg.groups.forEach((g, j) => {
+        const v = g.values[i]; if (!nn(v) || !v) return;
+        const x = gx + off + j * (bW + bp), bH = cH * (v / mx) * e, y = M.t + cH - bH;
+        ctx.save(); ctx.shadowColor = g.color; ctx.shadowBlur = 6; ctx.fillStyle = rgba(g.color, .72); ctx.fillRect(x, y, bW, bH); ctx.restore();
+        ctx.fillStyle = g.color; ctx.fillRect(x, y, bW, 2);
+        if (!RM) { const u = (t * .5 + i * .2 + j * .1) % 1; ctx.fillStyle = 'rgba(234,255,239,.22)'; ctx.fillRect(x, M.t + cH - bH * u, bW, 2); }
+        if (bH > 14) { ctx.fillStyle = '#e9ffec'; ctx.font = FONT(9, 700); ctx.textAlign = 'center'; ctx.fillText(v, x + bW / 2, y + 12); }
+      });
+    });
+  };
+}
+
+// ═══════════════════════════════════════════════════════════════
+// SHARED COMPONENTS
+// ═══════════════════════════════════════════════════════════════
+function regsHTML(list) {
+  return list.map(r => `<div class="reg"><div class="k">${esc(r.k)}</div><div class="v ${r.cls || ''}" ${r.style ? `style="${r.style}"` : ''} data-dc="${esc(r.v)}">${esc(r.v)}</div><div class="s">${r.s || ''}</div></div>`).join('');
+}
+function setRegs(id, list) { const el = $(id); el.innerHTML = regsHTML(list); decryptAll(el); }
+function siteTag(id) { return `<span class="site-tag" style="--c:${siteColor(id)}">${esc(siteName(id))}</span>`; }
+
+// Sortable leaderboard
+const LB = {};
+function renderLB(tableId, list, opt) {
+  const st = LB[tableId] || (LB[tableId] = { col: 'total', dir: -1 });
+  const ranked = [...list].sort(byTotal).map((t, i) => ({ ...t, _rank: i + 1, _pkt: pktOf(t), _pct: pctOf(t, opt.season, opt.round), _site: siteName(t.site) }));
+  const cols = [
+    { k: '_rank', l: '#', n: false },
+    { k: 'name', l: 'Team' },
+    ...(opt.showSite ? [{ k: '_site', l: 'School' }] : []),
+    { k: 'linux', l: 'Linux', n: true }, { k: 'win_desktop', l: 'Win', n: true }, { k: 'win_server', l: 'Srv', n: true },
+    { k: '_pkt', l: 'Packet', n: true }, { k: 'total', l: 'Total' }, { k: 'tier', l: 'Tier' }
+  ];
+  const sorted = [...ranked].sort((a, b) => {
+    let av = a[st.col], bv = b[st.col];
+    if (st.col === 'tier') { const o = { Platinum: 3, Gold: 2, Silver: 1 }; av = o[av] || 0; bv = o[bv] || 0; }
+    if (av == null && bv == null) return a._rank - b._rank;
+    if (av == null) return 1; if (bv == null) return -1;
+    if (typeof av === 'string') return st.dir * av.localeCompare(bv);
+    return st.dir * (av < bv ? -1 : av > bv ? 1 : 0) || a._rank - b._rank;
+  });
+  const tbl = $(tableId);
+  tbl.tHead.innerHTML = '<tr>' + cols.map(c => `<th class="sortable ${c.n ? 'n' : ''} ${st.col === c.k ? (st.dir > 0 ? 'sort-asc' : 'sort-desc') : ''}" data-col="${c.k}">${c.l}</th>`).join('') + '</tr>';
+  tbl.tHead.querySelectorAll('th').forEach(th => th.onclick = () => {
+    const k = th.dataset.col;
+    if (st.col === k) st.dir *= -1; else { st.col = k; st.dir = (k === '_rank' || k === 'name' || k === '_site') ? 1 : -1; }
+    if (k === '_rank') st.dir = st.col === k ? st.dir : 1;
+    renderLB(tableId, list, opt);
+  });
+  if (!sorted.length) {
+    tbl.tBodies[0].innerHTML = `<tr><td colspan="${cols.length}"><div class="empty">${opt.empty || 'NO SCORES FOR THIS ROUND YET'}<br><br><button class="linkish" data-goto="entry">Enter scores ▸</button></div></td></tr>`;
+    return;
+  }
+  const maxT = Math.max(1, ...sorted.map(t => t.total || 0));
+  tbl.tBodies[0].innerHTML = sorted.map(t => {
+    const r = t._rank;
+    return `<tr data-num="${esc(t.number)}" class="${opt.showSite && t.site === HOME ? 'home' : ''}">
+      <td class="rk ${r === 1 ? 'r1' : r === 2 ? 'r2' : r === 3 ? 'r3' : ''}"><span class="p">${r === 1 ? '◆ ' : ''}${pad(r)}</span></td>
+      <td class="team-name">${esc(teamLabel(t))}<small>${esc(t.number)}</small></td>
+      ${opt.showSite ? `<td>${siteTag(t.site)}${t.site === HOME ? '<span class="home-tag">HOME</span>' : ''}</td>` : ''}
+      <td class="n score-cell">${fmt(t.linux)}</td><td class="n score-cell">${fmt(t.win_desktop)}</td><td class="n score-cell">${fmt(t.win_server)}</td>
+      <td class="n score-cell">${fmt(t._pkt)}</td>
+      <td class="bar">${t.total != null ? `<span class="fill" style="width:${(t.total / maxT * 100).toFixed(0)}%${opt.showSite ? `;background:linear-gradient(90deg,${rgba(siteColor(t.site), .4)},${siteColor(t.site)});border-right-color:${siteColor(t.site)}` : ''}"></span><span class="label">${t.total.toFixed(1)}</span>` : '<span class="label" style="color:var(--dim)">—</span>'}</td>
+      <td>${t.tier ? `<span class="tier ${tierClass(t.tier)}">${t.tier.toUpperCase()}</span>` : '—'}${t.adv ? ' <span class="adv-tag">ADV</span>' : ''}</td>
+    </tr>`;
+  }).join('');
+  tbl.tBodies[0].querySelectorAll('tr[data-num]').forEach(tr => {
+    tr.onmouseenter = () => { HL.team = tr.dataset.num; tr.classList.add('hl'); if (opt.onHL) opt.onHL(); markDirty(); };
+    tr.onmouseleave = () => { HL.team = null; tr.classList.remove('hl'); if (opt.onHL) opt.onHL(); markDirty(); };
+  });
+}
+
+// radar config for a season/round: per-site averages (+ optional team)
+function radarAxes(season, round) {
+  const all = rowsFor(season, round, 'ALL');
+  const pmax = Math.max(0, ...all.map(pktOf).filter(nn));
+  return [{ label: 'Linux', k: 'linux', max: 100 }, { label: 'Windows', k: 'win_desktop', max: 100 }, { label: 'Server', k: 'win_server', max: 100 }, { label: 'Packet', k: '_pkt', max: pmax ? niceMax(pmax) : 100 }];
+}
+function catAvg(list, axes) {
+  return axes.map(a => { const v = list.map(t => a.k === '_pkt' ? pktOf(t) : t[a.k]).filter(nn); return v.length ? mean(v) : null; });
+}
+function teamCats(t, axes) { return axes.map(a => a.k === '_pkt' ? pktOf(t) : t[a.k]); }
+function legendHTML(items) { return items.map(i => `<span class="k" style="--c:${i.color}"><i></i>${esc(i.name)}</span>`).join(''); }
+
+function trajSeries(season, siteId) {
+  const rs = roundsIn(season);
+  const reg = registry(season).filter(t => t.site === siteId);
+  const series = reg.map((t, i) => ({
+    key: t.number, name: t.name || ('Team ' + t.number), color: TEAM_COLORS[i % TEAM_COLORS.length],
+    data: rs.map(r => { const row = rowsFor(season, r, 'ALL').find(x => x.number === t.number); return row ? row.total : null; })
+  })).filter(s => s.data.some(nn));
+  return { xlabels: rs.map(r => ROUND_NAME[r]), series };
+}
+
+// ═══════════════════════════════════════════════════════════════
+// SELECTORS
+// ═══════════════════════════════════════════════════════════════
+function fillSeasonSelects() {
+  const ss = seasonsDesc();
+  if (!VIEW.season || !DB.seasons[VIEW.season]) VIEW.season = ss.find(s => roundsIn(s).length) || ss[0] || null;
+  document.querySelectorAll('.season-sel').forEach(sel => {
+    sel.innerHTML = ss.map(s => `<option value="${s}">20${s.slice(0, 2)}-${s.slice(3)}</option>`).join('');
+    sel.value = VIEW.season;
+    sel.onchange = () => { VIEW.season = sel.value; VIEW.round = null; syncRound(); renderCurrent(); };
+  });
+  syncRound();
+  ['sb-season'].forEach(id => { const sel = $(id), cur = sel.value; sel.innerHTML = '<option value="ALL">All Seasons</option>' + ss.map(s => `<option value="${s}">20${s.slice(0, 2)}-${s.slice(3)}</option>`).join(''); sel.value = [...sel.options].some(o => o.value === cur) ? cur : 'ALL'; });
+  const semiS = ss.filter(s => getRound(s, 'Semis'));
+  const sm = $('sm-season'), smc = sm.value;
+  sm.innerHTML = (semiS.length ? semiS : ss).map(s => `<option value="${s}">20${s.slice(0, 2)}-${s.slice(3)}</option>`).join('');
+  sm.value = [...sm.options].some(o => o.value === smc) ? smc : (sm.options[0] ? sm.options[0].value : '');
+  const sites = siteList();
+  document.querySelectorAll('.site-sel').forEach(sel => {
+    const cur = sel.value || HOME;
+    sel.innerHTML = '<option value="ALL">All Schools</option>' + sites.map(s => `<option value="${s.id}">${esc(s.name)}</option>`).join('');
+    sel.value = [...sel.options].some(o => o.value === cur) ? cur : HOME;
+  });
+  const sbs = $('sb-site'), sbc = sbs.value || 'ALL';
+  sbs.innerHTML = '<option value="ALL">All Schools</option>' + sites.map(s => `<option value="${s.id}">${esc(s.name)}</option>`).join('');
+  sbs.value = [...sbs.options].some(o => o.value === sbc) ? sbc : 'ALL';
+}
+function syncRound() {
+  const rs = VIEW.season ? roundsIn(VIEW.season) : [];
+  if (!VIEW.round || !rs.includes(VIEW.round)) VIEW.round = rs[rs.length - 1] || 'R1';
+  document.querySelectorAll('.season-sel').forEach(sel => sel.value = VIEW.season);
+  document.querySelectorAll('.round-sel').forEach(sel => {
+    sel.innerHTML = (rs.length ? rs : ['R1']).map(r => `<option value="${r}">${ROUND_NAME[r]}</option>`).join('');
+    sel.value = VIEW.round;
+    sel.onchange = () => { VIEW.round = sel.value; syncRound(); renderCurrent(); };
   });
 }
 
 // ═══════════════════════════════════════════════════════════════
-// PAGE SWITCHING
+// PAGE: WCTA OVERVIEW
 // ═══════════════════════════════════════════════════════════════
-function showPage(name,btn){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('nav.tabs button').forEach(b=>b.classList.remove('active'));
-  $('page-'+name).classList.add('active');
-  if(btn)btn.classList.add('active');
-  $('cur-page-path').textContent=name;
-  if(name==='overview')renderOverview();
-  else if(name==='scoreboard')renderScoreboard();
-  else if(name==='analytics')renderAnalytics();
-  else if(name==='semis')renderSemis();
+function renderOverview() {
+  const { season, round } = VIEW;
+  if (!season) return;
+  const ts = rowsFor(season, round, HOME).slice().sort(byTotal);
+  const scored = ts.filter(t => t.total != null);
+  const nw = nationwide(season, round);
+  $('ov-tag').textContent = `◆ ${season} · ${ROUND_SHORT[round]}`;
+  const top = scored[0];
+  const cnt = k => ts.filter(t => t.tier === k).length;
+  const ranked = ts.filter(t => t.natl_rank != null).sort((a, b) => a.natl_rank - b.natl_rank);
+  setRegs('ov-registers', [
+    { k: 'Teams', v: ts.length, s: nw ? `of ${nw.toLocaleString()} nationwide` : 'this round' },
+    { k: 'Avg Score', v: scored.length ? mean(scored.map(t => t.total)).toFixed(0) : '—', s: 'WCTA mean' },
+    { k: 'Top Score', v: top ? top.total.toFixed(0) : '—', cls: 'gold', s: top ? esc(teamLabel(top)) : '—' },
+    { k: 'Plat/Gold/Silv', v: `${cnt('Platinum')}·${cnt('Gold')}·${cnt('Silver')}`, s: 'tier breakdown' },
+    { k: 'Best Natl Rank', v: ranked[0] ? '#' + ranked[0].natl_rank : '—', style: 'font-size:30px', s: ranked[0] ? `${esc(teamLabel(ranked[0]))} · top ${fmtPct(pctOf(ranked[0], season, round))}` : 'no ranks yet' }
+  ]);
+
+  const axes = radarAxes(season, round);
+  const others = rowsFor(season, round, 'ALL').filter(t => t.site !== HOME);
+  const ctxKey = season + '|' + round;
+  const buildRadar = () => {
+    const series = [{ key: 'wcta', name: 'West CTA avg', color: C.green, vals: catAvg(ts, axes), fill: true }];
+    if (others.length) series.push({ key: 'all', name: 'Other schools avg', color: C.silver, vals: catAvg(others, axes), dash: true, width: 1.2 });
+    const hlT = HL.team && ts.find(t => t.number === HL.team);
+    if (hlT) series.push({ key: hlT.number, name: teamLabel(hlT), color: '#ffffff', vals: teamCats(hlT, axes), width: 2 });
+    const prev = CH.get('ov-radar'), keep = prev && prev._ctx === ctxKey ? prev.t0 : null;
+    const ch = chart('ov-radar', drawRadar({ axes, series }), radarHit);
+    ch.axes = axes; ch._ctx = ctxKey; if (keep != null) ch.t0 = keep;   // hover never restarts the draw-in
+    $('ov-radar-legend').innerHTML = legendHTML(series.filter(s => s.vals.some(nn)));
+  };
+  buildRadar();
+  renderLB('ov-lb', ts, { season, round, onHL: buildRadar, empty: `NO WEST CTA SCORES FOR ${ROUND_NAME[round].toUpperCase()} YET` });
+  $('ov-radar-tag').textContent = `◆ ${ROUND_SHORT[round]} · SWEEP`;
+
+  // tier ring + percentile
+  const parts = [{ n: cnt('Platinum'), color: C.gold, l: 'Platinum' }, { n: cnt('Gold'), color: C.amber, l: 'Gold' }, { n: cnt('Silver'), color: C.silver, l: 'Silver' }];
+  const tiered = parts.reduce((a, p) => a + p.n, 0);
+  chart('ov-ring', drawRing({ parts, center: tiered || ts.length, sub: tiered ? 'TIERED TEAMS' : 'NO TIERS YET' }));
+  const pcts = ts.map(t => pctOf(t, season, round)).filter(nn);
+  $('ov-ring-side').innerHTML = parts.map(p => `<div class="cmp-row" style="margin-bottom:6px"><div class="cmp-label" style="width:auto;flex:0 0 76px">${p.l.toUpperCase()}</div><div style="color:${p.color};font-weight:700">${p.n}</div></div>`).join('') +
+    `<div style="margin-top:8px">${pcts.length ? `Median: top <b>${fmtPct(pcts.sort((a, b) => a - b)[Math.floor(pcts.length / 2)])}</b> nationally<br>${pcts.filter(p => p <= .25).length} of ${pcts.length} ranked teams in the top 25%` : 'Tiers are assigned after Round 2. Enter national ranks to light up the percentile strip.'}</div>`;
+  chart('ov-pct', drawPct({ teams: ts.map(t => ({ key: t.number, name: teamLabel(t), pct: pctOf(t, season, round), rank: t.natl_rank, color: TIER_COLOR[t.tier] || C.green })) }), pctHit);
+
+  // trajectory
+  const tj = trajSeries(season, HOME);
+  $('ov-traj-meta').textContent = `${season} · ${tj.series.length} TEAMS`;
+  chart('ov-traj', drawLines({ ...tj, hlKey: () => HL.team, empty: 'NO SCORES THIS SEASON YET' }), linesHit);
+
+  // heatmap: seasons × rounds
+  const ss = seasonsAsc().filter(s => ROUNDS.some(r => rowsFor(s, r, HOME).some(t => t.total != null)));
+  const vals = ss.map(s => ROUNDS.map(r => { const v = rowsFor(s, r, HOME).map(t => t.total).filter(nn); return v.length ? mean(v) : null; }));
+  const counts = ss.map(s => ROUNDS.map(r => rowsFor(s, r, HOME).filter(t => t.total != null).length));
+  const hc = { rows: ss.map(s => ({ label: '20' + s.slice(0, 2) + '-' + s.slice(3), color: s === season ? C.green : C.fg })), cols: ROUNDS.map(r => ROUND_NAME[r].toUpperCase()), shortCols: ROUNDS.map(r => ROUND_SHORT[r]), vals, counts };
+  $('ov-heat').dataset.h = 30 + Math.max(1, ss.length) * 44;
+  chart('ov-heat', drawHeat(hc), heatHit(hc));
 }
 
 // ═══════════════════════════════════════════════════════════════
-// OVERVIEW PAGE
+// PAGE: ALL SITES
 // ═══════════════════════════════════════════════════════════════
-function renderOverview(){
-  const season=$('ov-season').value;
-  const round=$('ov-round').value;
-  const rd=getRound(season,round);
-  $('ov-tag').textContent=`◆ ${season} · ${round}`;
-  $('ov-prog-tag').textContent=`◆ ${season}`;
-  $('cur-season').textContent=season;
-  if(!rd){$('ov-registers').innerHTML='<div class="empty">No data for this selection</div>';return;}
-  const teams=[...(rd.teams||[])].sort((a,b)=>(b.total||0)-(a.total||0));
-  $('cur-teams').textContent=teams.length;
+function siteGroups(season, round) {
+  return siteList().map(s => {
+    const ts = rowsFor(season, round, s.id);
+    return { s, ts, scored: ts.filter(t => t.total != null) };
+  }).filter(g => g.ts.length);
+}
+function renderAllSites() {
+  const { season, round } = VIEW;
+  if (!season) return;
+  const all = rowsFor(season, round, 'ALL').slice().sort(byTotal);
+  const scored = all.filter(t => t.total != null);
+  const groups = siteGroups(season, round);
+  $('as-tag').textContent = `◆ ${season} · ${ROUND_SHORT[round]}`;
+  const avgRank = groups.filter(g => g.scored.length).map(g => ({ id: g.s.id, a: mean(g.scored.map(t => t.total)) })).sort((a, b) => b.a - a.a);
+  const wr = avgRank.findIndex(x => x.id === HOME);
+  const top = scored[0];
+  setRegs('as-registers', [
+    { k: 'Schools', v: groups.length, s: `${siteList().filter(s => s.id !== 'unknown').length} on file` },
+    { k: 'Teams', v: all.length, s: `${scored.length} with a total` },
+    { k: 'Top Score', v: top ? top.total.toFixed(0) : '—', cls: 'gold', s: top ? `${esc(teamLabel(top))} · ${esc(siteName(top.site))}` : '—' },
+    { k: 'All-Site Avg', v: scored.length ? mean(scored.map(t => t.total)).toFixed(0) : '—', s: 'mean total' },
+    { k: 'WCTA Rank', v: wr >= 0 ? `#${wr + 1}` : '—', style: 'font-size:30px', s: wr >= 0 ? `of ${avgRank.length} schools by avg` : 'no WCTA totals' }
+  ]);
+  renderLB('as-lb', all, { season, round, showSite: true, empty: `NO SCORES FOR ${ROUND_NAME[round].toUpperCase()} YET` });
 
-  // KPIs
-  const valid=teams.filter(t=>t.total!=null);
-  const avg=valid.length?valid.reduce((s,t)=>s+(t.total||0),0)/valid.length:0;
-  const top=valid[0];
-  const plat=teams.filter(t=>t.tier==='Platinum').length;
-  const gold=teams.filter(t=>t.tier==='Gold').length;
-  const silv=teams.filter(t=>t.tier==='Silver').length;
-  const natl=rd.teams_nationwide;
-  $('ov-registers').innerHTML=`
-    <div class="reg"><div class="k">Teams</div><div class="v">${teams.length}</div><div class="s">this round</div></div>
-    <div class="reg"><div class="k">Avg Score</div><div class="v">${avg.toFixed(0)}</div><div class="s">WCTA mean</div></div>
-    <div class="reg"><div class="k">Top Score</div><div class="v gold">${top?(top.total||0).toFixed(0):'—'}</div><div class="s">${top?top.name:'—'}</div></div>
-    <div class="reg"><div class="k">Plat/Gold/Silv</div><div class="v">${plat}·${gold}·${silv}</div><div class="s">tier breakdown</div></div>
-    <div class="reg"><div class="k">Nationwide</div><div class="v" style="font-size:24px">${natl?natl.toLocaleString():'—'}</div><div class="s">competing teams</div></div>
-  `;
+  const cmpItems = groups.filter(g => g.scored.length).map(g => {
+    const a = mean(g.scored.map(t => t.total)), b = Math.max(...g.scored.map(t => t.total));
+    const tp = g.scored.slice().sort(byTotal)[0];
+    return { label: g.s.name, color: siteColor(g.s.id), a, b, tip: `Average ${fmt(a)} · Top ${fmt(b)} (${esc(teamLabel(tp))})<br>${g.scored.length} of ${g.ts.length} teams scored` };
+  }).sort((x, y) => y.a - x.a);
+  $('as-cmp').dataset.h = Math.max(120, 12 + cmpItems.length * 34);
+  chart('as-cmp', drawHBars({ items: cmpItems, empty: 'TOTALS APPEAR ONCE A SCHOOL HAS SCORES' }), hbarsHit);
 
-  // Leaderboard
-  const top10=teams.slice(0,10);
-  const maxT=top10[0]?.total||1;
-  $('ov-lb-body').innerHTML=top10.map((t,i)=>`<tr>
-    <td class="rk ${i===0?'r1':i===1?'r2':i===2?'r3':''}"><span class="p">${i===0?'◆ ':''}${String(i+1).padStart(2,'0')}</span></td>
-    <td class="team-name">${t.name}<small>${t.number}</small></td>
-    <td class="n score-cell">${fmt(t.linux)}</td>
-    <td class="n score-cell">${fmt(t.win_desktop)}</td>
-    <td class="n score-cell">${fmt(t.win_server)}</td>
-    <td class="n score-cell">${fmt(t.packet_total)}</td>
-    <td class="bar"><span class="fill" style="width:${((t.total||0)/maxT*100).toFixed(0)}%"></span><span class="label">${(t.total||0).toFixed(1)}</span></td>
-    <td>${t.tier?`<span class="tier ${tierClass(t.tier)}">${t.tier.toUpperCase()}</span>`:'—'}</td>
-  </tr>`).join('');
+  const splitItems = groups.map(g => {
+    const img = g.ts.map(imgOf).filter(nn).reduce((a, v) => a + v, 0), pkt = g.ts.map(pktOf).filter(nn).reduce((a, v) => a + v, 0);
+    return { label: g.s.name, color: siteColor(g.s.id), img, pkt, n: g.ts.length };
+  }).filter(x => x.img + x.pkt > 0);
+  $('as-split').dataset.h = Math.max(120, 12 + splitItems.length * 34);
+  chart('as-split', drawSplit({ items: splitItems, empty: 'NO IMAGE OR PACKET POINTS YET' }), hbarsHit);
 
-  // Category bar chart
-  const cats=['linux','win_desktop','win_server','packet_total'];
-  const catLabels=['Linux','Win DT','Win Srv','Packet'];
-  const avgs=cats.map(c=>{const vs=teams.filter(t=>t[c]!=null).map(t=>t[c]);return vs.length?vs.reduce((s,v)=>s+v,0)/vs.length:null;});
-  drawBar($('ov-cat-chart'),avgs,catLabels,'#00FF41',100);
+  const axes = radarAxes(season, round);
+  const rs = groups.slice(0, 9).map(g => ({ key: g.s.id, name: g.s.name, color: siteColor(g.s.id), vals: catAvg(g.ts, axes), fill: g.s.id === HOME, width: g.s.id === HOME ? 2 : 1.3 }));
+  const rc = chart('as-radar', drawRadar({ axes, series: rs }), radarHit); rc.axes = axes;
+  $('as-radar-legend').innerHTML = legendHTML(rs.filter(s => s.vals.some(nn)));
 
-  // Tier YoY chart
-  renderTierYoY();
-  // National rank summary
-  renderNatlSummary(season,round);
-  // Progression chart
-  renderProgression(season);
+  const rds = roundsIn(season);
+  const trend = siteList().map(s => ({ key: s.id, name: s.name, color: siteColor(s.id), data: rds.map(r => { const v = rowsFor(season, r, s.id).map(t => t.total).filter(nn); return v.length ? mean(v) : null; }) })).filter(s => s.data.some(nn));
+  $('as-trend-tag').textContent = `◆ ${season}`;
+  chart('as-trend', drawLines({ xlabels: rds.map(r => ROUND_NAME[r]), series: trend, empty: 'NO TOTALS THIS SEASON' }), linesHit);
+  $('as-trend-legend').innerHTML = legendHTML(trend);
+
+  const hs = siteList().filter(s => rds.some(r => rowsFor(season, r, s.id).some(t => t.total != null)));
+  const hc = {
+    rows: hs.map(s => ({ label: s.name, color: siteColor(s.id) })), cols: rds.map(r => ROUND_NAME[r].toUpperCase()), shortCols: rds.map(r => ROUND_SHORT[r]),
+    vals: hs.map(s => rds.map(r => { const v = rowsFor(season, r, s.id).map(t => t.total).filter(nn); return v.length ? mean(v) : null; })),
+    counts: hs.map(s => rds.map(r => rowsFor(season, r, s.id).filter(t => t.total != null).length))
+  };
+  $('as-heat-tag').textContent = `◆ ${season}`;
+  $('as-heat').dataset.h = 30 + Math.max(1, hs.length) * 40;
+  chart('as-heat', drawHeat(hc), heatHit(hc));
 }
 
-function renderTierYoY(){
-  const seasons=Object.keys(DB.seasons).sort((a,b)=>SEASON_ORDER[a]-SEASON_ORDER[b]);
-  const platCounts=[];const goldCounts=[];const silvCounts=[];
-  seasons.forEach(s=>{
-    const rd=getRound(s,'R2')||getRound(s,'R1');
-    if(!rd){platCounts.push(0);goldCounts.push(0);silvCounts.push(0);return;}
-    const ts=rd.teams||[];
-    platCounts.push(ts.filter(t=>t.tier==='Platinum').length);
-    goldCounts.push(ts.filter(t=>t.tier==='Gold').length);
-    silvCounts.push(ts.filter(t=>t.tier==='Silver').length);
+// ═══════════════════════════════════════════════════════════════
+// PAGE: SCHOOLS (sub-tab per school)
+// ═══════════════════════════════════════════════════════════════
+function renderSchools() {
+  const { season, round } = VIEW;
+  const sites = siteList();
+  const reg = season ? registry(season) : [];
+  const countOf = id => reg.filter(t => t.site === id).length;
+  if (!SC_SITE || !sites.some(s => s.id === SC_SITE)) SC_SITE = (sites.find(s => s.id !== HOME && countOf(s.id)) || sites[0] || {}).id;
+  $('sc-chips').innerHTML = sites.map(s => `<button class="chip ${s.id === SC_SITE ? 'active' : ''}" style="--c:${siteColor(s.id)}" data-site="${s.id}">${esc(s.name)} <span class="n">${countOf(s.id)}</span></button>`).join('') +
+    `<button class="chip" style="--c:var(--mute)" data-goto="sites">+ Add School</button>`;
+  $('sc-chips').querySelectorAll('[data-site]').forEach(b => b.onclick = () => { SC_SITE = b.dataset.site; try { localStorage.setItem('wcta_sc_site', SC_SITE); } catch (e) {} renderSchools(); replayPage('schools'); });
+  if (!season || !SC_SITE) return;
+  const sid = SC_SITE, col = siteColor(sid), nm = siteName(sid);
+  const ts = rowsFor(season, round, sid).slice().sort(byTotal);
+  const scored = ts.filter(t => t.total != null);
+  const home = rowsFor(season, round, HOME), homeScored = home.filter(t => t.total != null);
+  $('sc-title').textContent = nm.toUpperCase(); $('sc-title').style.color = col;
+  $('sc-tag').textContent = `◆ ${season} · ${ROUND_SHORT[round]}`;
+  const cnt = k => ts.filter(t => t.tier === k).length;
+  const avg = scored.length ? mean(scored.map(t => t.total)) : null, havg = homeScored.length ? mean(homeScored.map(t => t.total)) : null;
+  const diff = (avg != null && havg != null && sid !== HOME) ? avg - havg : null;
+  const top = scored[0];
+  setRegs('sc-registers', [
+    { k: 'Teams', v: ts.length, s: `${countOf(sid)} registered this season` },
+    { k: 'Avg Score', v: avg != null ? avg.toFixed(0) : '—', s: 'school mean' },
+    { k: 'Top Score', v: top ? top.total.toFixed(0) : '—', cls: 'gold', s: top ? esc(teamLabel(top)) : '—' },
+    { k: 'Plat/Gold/Silv', v: `${cnt('Platinum')}·${cnt('Gold')}·${cnt('Silver')}`, s: 'tier breakdown' },
+    { k: sid === HOME ? 'Best Natl Rank' : 'vs West CTA', v: sid === HOME ? (ts.filter(t => t.natl_rank != null).sort((a, b) => a.natl_rank - b.natl_rank)[0]?.natl_rank ? '#' + ts.filter(t => t.natl_rank != null).sort((a, b) => a.natl_rank - b.natl_rank)[0].natl_rank : '—') : (diff != null ? (diff >= 0 ? '+' : '') + diff.toFixed(0) : '—'), style: 'font-size:30px' + (diff != null ? `;color:${diff > 0 ? '#ff6b6b' : C.green}` : ''), s: diff != null ? `<span class="trend ${diff > 0 ? 'down' : 'up'}">${diff > 0 ? '▲ AHEAD OF WCTA' : '▼ BEHIND WCTA'}</span>` : 'avg total difference' }
+  ]);
+  renderLB('sc-lb', ts, { season, round, empty: `NO ${esc(nm).toUpperCase()} SCORES FOR ${ROUND_NAME[round].toUpperCase()} YET` });
+
+  const axes = radarAxes(season, round);
+  const series = [{ key: sid, name: nm + ' avg', color: col, vals: catAvg(ts, axes), fill: true, width: 2 }];
+  if (sid !== HOME) series.push({ key: HOME, name: 'West CTA avg', color: C.green, vals: catAvg(home, axes), dash: true, width: 1.3 });
+  const rc = chart('sc-radar', drawRadar({ axes, series }), radarHit); rc.axes = axes;
+  $('sc-radar-legend').innerHTML = legendHTML(series.filter(s => s.vals.some(nn)));
+
+  // head to head
+  const cats = [...axes.map(a => ({ l: a.label, f: t => a.k === '_pkt' ? pktOf(t) : t[a.k] })), { l: 'Total', f: t => t.total }];
+  const rowsH = cats.map(c => { const a = ts.map(c.f).filter(nn), b = home.map(c.f).filter(nn); return { l: c.l, a: a.length ? mean(a) : null, b: b.length ? mean(b) : null }; });
+  $('sc-h2h').innerHTML = (sid === HOME ? '<div class="hint" style="margin-bottom:10px">Pick another school above to compare it with West CTA.</div>' : '') +
+    `<div class="h2h-row"><span></span><span class="lbl" style="color:${col}">${esc(nm)}</span><span></span><span class="lbl" style="color:var(--green)">West CTA</span><span></span></div>` +
+    rowsH.map(r => { const mx = Math.max(r.a || 0, r.b || 0) || 1; return `<div class="h2h-row"><span class="lbl">${r.l}</span>
+      <div class="h2h-track"><div class="h2h-fill" style="--c:${col};width:0" data-w="${(r.a || 0) / mx * 100}"></div></div><span class="v">${fmt(r.a)}</span>
+      <div class="h2h-track"><div class="h2h-fill" style="--c:${C.green};width:0" data-w="${(r.b || 0) / mx * 100}"></div></div><span class="v">${fmt(r.b)}</span></div>`; }).join('');
+  requestAnimationFrame(() => requestAnimationFrame(() => $('sc-h2h').querySelectorAll('.h2h-fill').forEach(el => el.style.width = el.dataset.w + '%')));
+
+  const tj = trajSeries(season, sid);
+  $('sc-traj-meta').textContent = `${season} · ${tj.series.length} TEAMS`;
+  chart('sc-traj', drawLines({ ...tj, empty: 'NO SCORES FOR THIS SCHOOL THIS SEASON' }), linesHit);
+}
+
+// ═══════════════════════════════════════════════════════════════
+// PAGE: SCOREBOARD
+// ═══════════════════════════════════════════════════════════════
+let sbData = [], sbSortCol = 'total', sbSortDir = -1, sbPageNum = 1;
+const SB_PAGE_SIZE = 25;
+function getAllRows() {
+  const out = [];
+  for (const [s, sv] of Object.entries(DB.seasons)) for (const [r, rv] of Object.entries(sv.rounds)) {
+    [...(rv.teams || [])].sort(byTotal).forEach((t, i) => out.push({ ...t, season: s, round: r, rank: i + 1, siteName: siteName(t.site), packet_total: pktOf(t), pct: pctOf(t, s, r) }));
+  }
+  return out;
+}
+function renderScoreboard() {
+  const season = $('sb-season').value, round = $('sb-round').value, tier = $('sb-tier').value, sid = $('sb-site').value;
+  const q = ($('sb-search').value || '').toLowerCase();
+  let rows = getAllRows();
+  if (season !== 'ALL') rows = rows.filter(r => r.season === season);
+  if (round !== 'ALL') rows = rows.filter(r => r.round === round);
+  if (tier !== 'ALL') rows = rows.filter(r => r.tier === tier);
+  if (sid !== 'ALL') rows = rows.filter(r => r.site === sid);
+  if (q) rows = rows.filter(r => (r.name || '').toLowerCase().includes(q) || (r.number || '').toLowerCase().includes(q));
+  sbData = rows; sbSort(sbSortCol, true);
+}
+function sbSort(col, skip) {
+  if (!skip) { if (col === sbSortCol) sbSortDir *= -1; else { sbSortCol = col; sbSortDir = -1; } }
+  sbData.sort((a, b) => {
+    let av = a[col] ?? -9999, bv = b[col] ?? -9999;
+    if (typeof av === 'string' || typeof bv === 'string') { av = String(av).toLowerCase(); bv = String(bv).toLowerCase(); }
+    if (av < bv) return sbSortDir; if (av > bv) return -sbSortDir; return 0;
   });
-  drawGroupedBar($('ov-tier-chart'),
-    [{values:platCounts},{values:goldCounts},{values:silvCounts}],
-    seasons,['rgba(255,215,0,.8)','rgba(255,165,0,.7)','rgba(192,192,192,.6)']
-  );
+  document.querySelectorAll('#sb-table th').forEach(th => { th.classList.remove('sort-asc', 'sort-desc'); if (th.dataset.col === sbSortCol) th.classList.add(sbSortDir > 0 ? 'sort-asc' : 'sort-desc'); });
+  sbPageNum = 1; renderSbTable();
 }
-
-function renderNatlSummary(season,round){
-  const rd=getRound(season,round);
-  if(!rd){$('ov-rank-summary').innerHTML='<div class="empty">No ranking data</div>';return;}
-  const teams=[...(rd.teams||[])].filter(t=>t.natl_rank!=null).sort((a,b)=>a.natl_rank-b.natl_rank);
-  if(!teams.length){$('ov-rank-summary').innerHTML='<div class="empty">No national rank data for this round</div>';return;}
-  const best=teams[0];
-  const pcts=teams.filter(t=>t.natl_pct!=null).map(t=>t.natl_pct);
-  const avgPct=pcts.length?pcts.reduce((s,v)=>s+v,0)/pcts.length:null;
-  $('ov-rank-summary').innerHTML=`
-    <div class="stat-box" style="margin-bottom:12px"><div class="sk">Best National Rank</div><div class="sv">#${best.natl_rank}</div><div class="sd">${best.name}</div></div>
-    <div class="stat-box" style="margin-bottom:12px"><div class="sk">Best Natl Percentile</div><div class="sv">${fmtPct(best.natl_pct)}</div><div class="sd">top ${fmtPct(best.natl_pct)} nationwide</div></div>
-    <div class="stat-box"><div class="sk">WCTA Avg Percentile</div><div class="sv">${avgPct!=null?fmtPct(avgPct):'—'}</div><div class="sd">across ${teams.length} ranked teams</div></div>
-    <div style="margin-top:14px;font-size:10px;color:var(--mute);letter-spacing:.1em">TOP 5 NATIONAL RANKS</div>
-    ${teams.slice(0,5).map(t=>`<div class="cmp-row" style="margin-top:8px">
-      <div class="cmp-label">${t.name}</div>
-      <div style="font-size:12px;color:var(--green)">#${t.natl_rank}</div>
-      <div style="font-size:11px;color:var(--mute);margin-left:8px">${fmtPct(t.natl_pct)}</div>
-    </div>`).join('')}
-  `;
-}
-
-function renderProgression(season){
-  const r1=getRound(season,'R1');const r2=getRound(season,'R2');
-  if(!r1||!r2){$('ov-prog-chart').getContext('2d').clearRect(0,0,1000,260);return;}
-  const names=[...new Set([...r1.teams.map(t=>t.name),...r2.teams.map(t=>t.name)])];
-  const colors=['#00FF41','#C41E3A','#FFD700','#FFA500','#C0C0C0','#00BFFF','#FF69B4','#7CFC00','#FF6347','#DDA0DD','#20B2AA','#F0E68C','#87CEEB','#FF4500','#32CD32','#9370DB'];
-  const datasets=names.slice(0,8).map((n,i)=>{
-    const t1=r1.teams.find(t=>t.name===n);
-    const t2=r2.teams.find(t=>t.name===n);
-    return{data:[t1?.total??null,t2?.total??null],color:colors[i%colors.length],name:n};
-  });
-  drawLineChart($('ov-prog-chart'),datasets,['Round 1','Round 2']);
-}
-
-// ═══════════════════════════════════════════════════════════════
-// SCOREBOARD PAGE
-// ═══════════════════════════════════════════════════════════════
-let sbData=[],sbSortCol='total',sbSortDir=-1,sbPageNum=1;
-const SB_PAGE_SIZE=25;
-
-function renderScoreboard(){
-  const season=$('sb-season').value;
-  const round=$('sb-round').value;
-  const tier=$('sb-tier').value;
-  const search=($('sb-search').value||'').toLowerCase();
-  let rows=getAllRows();
-  if(season!=='ALL')rows=rows.filter(r=>r.season===season);
-  if(round!=='ALL')rows=rows.filter(r=>r.round===round);
-  if(tier!=='ALL')rows=rows.filter(r=>r.tier===tier);
-  if(search)rows=rows.filter(r=>r.name.toLowerCase().includes(search)||r.number.toLowerCase().includes(search));
-  sbData=rows;
-  sbSort(sbSortCol,true);
-}
-
-function sbSort(col,skipToggle){
-  if(!skipToggle){if(col===sbSortCol)sbSortDir*=-1;else{sbSortCol=col;sbSortDir=-1;}}
-  sbData.sort((a,b)=>{
-    let av=a[col]??-9999,bv=b[col]??-9999;
-    if(typeof av==='string')av=av.toLowerCase(),bv=bv.toLowerCase();
-    if(av<bv)return sbSortDir;if(av>bv)return -sbSortDir;return 0;
-  });
-  document.querySelectorAll('#sb-table th').forEach(th=>{th.classList.remove('sort-asc','sort-desc');if(th.dataset.col===sbSortCol)th.classList.add(sbSortDir>0?'sort-asc':'sort-desc');});
-  sbPageNum=1;renderSbTable();
-}
-
-function sbPage(d){
-  sbPageNum=Math.max(1,Math.min(Math.ceil(sbData.length/SB_PAGE_SIZE),sbPageNum+d));
-  renderSbTable();
-}
-
-function renderSbTable(){
-  const total=sbData.length;
-  const pages=Math.ceil(total/SB_PAGE_SIZE)||1;
-  const start=(sbPageNum-1)*SB_PAGE_SIZE;
-  const slice=sbData.slice(start,start+SB_PAGE_SIZE);
-  $('sb-count').textContent=`◆ ${total} ROWS`;
-  $('sb-page-info').textContent=`Page ${sbPageNum} / ${pages}`;
-  $('sb-total-info').textContent=`${total} records`;
-  $('sb-body').innerHTML=slice.map(r=>`<tr>
+function sbPage(d) { sbPageNum = Math.max(1, Math.min(Math.ceil(sbData.length / SB_PAGE_SIZE) || 1, sbPageNum + d)); renderSbTable(); }
+function renderSbTable() {
+  const total = sbData.length, pages = Math.ceil(total / SB_PAGE_SIZE) || 1, start = (sbPageNum - 1) * SB_PAGE_SIZE;
+  $('sb-count').textContent = `◆ ${total} ROWS`;
+  $('sb-page-info').textContent = `Page ${sbPageNum} / ${pages}`;
+  $('sb-total-info').textContent = `${total} records`;
+  $('sb-body').innerHTML = sbData.slice(start, start + SB_PAGE_SIZE).map(r => `<tr class="${r.site === HOME ? '' : ''}">
     <td>${r.season}</td><td>${r.round}</td>
     <td class="rk"><span class="p">${r.rank}</span></td>
-    <td class="team-name">${r.name}<small>${r.number}</small></td>
-    <td class="n score-cell">${fmt(r.linux)}</td>
-    <td class="n score-cell">${fmt(r.win_desktop)}</td>
-    <td class="n score-cell">${fmt(r.win_server)}</td>
+    <td class="team-name">${esc(teamLabel(r))}<small>${esc(r.number)}</small></td>
+    <td>${siteTag(r.site)}</td>
+    <td class="n score-cell">${fmt(r.linux)}</td><td class="n score-cell">${fmt(r.win_desktop)}</td><td class="n score-cell">${fmt(r.win_server)}</td>
     <td class="n score-cell">${fmt(r.packet_total)}</td>
-    <td class="n" style="color:${r.adjust<0?'#ff6b6b':'var(--mute)'}">${r.adjust!=null?r.adjust:'—'}</td>
-    <td class="n"><strong>${r.total!=null?r.total.toFixed(1):'—'}</strong></td>
-    <td class="n">${r.nv_rank!=null?'#'+r.nv_rank:'—'}</td>
-    <td class="n">${r.natl_rank!=null?'#'+r.natl_rank:'—'}</td>
-    <td class="n">${r.natl_pct!=null?fmtPct(r.natl_pct):'—'}</td>
-    <td>${r.tier?`<span class="tier ${tierClass(r.tier)}">${r.tier.slice(0,4).toUpperCase()}</span>`:'—'}</td>
-    <td>${r.adv?`<span class="adv-tag">ADV</span>`:'—'}</td>
-  </tr>`).join('');
+    <td class="n" style="color:${r.adjust < 0 ? '#ff6b6b' : 'var(--mute)'}">${r.adjust != null ? r.adjust : '—'}</td>
+    <td class="n"><strong>${r.total != null ? r.total.toFixed(1) : '—'}</strong></td>
+    <td class="n">${r.nv_rank != null ? '#' + r.nv_rank : '—'}</td>
+    <td class="n">${r.natl_rank != null ? '#' + r.natl_rank : '—'}</td>
+    <td class="n">${fmtPct(r.pct)}</td>
+    <td>${r.tier ? `<span class="tier ${tierClass(r.tier)}">${r.tier.slice(0, 4).toUpperCase()}</span>` : '—'}</td>
+    <td>${r.adv ? '<span class="adv-tag">ADV</span>' : '—'}</td></tr>`).join('') ||
+    '<tr><td colspan="16" class="empty">No rows match these filters</td></tr>';
 }
 
 // ═══════════════════════════════════════════════════════════════
-// DATA ENTRY PAGE
+// ADMIN API
 // ═══════════════════════════════════════════════════════════════
-let recentEntries=[];
-function clearForm(){
-  ['e-number','e-name','e-linux','e-win-desktop','e-win-server','e-pkt-quiz','e-pkt-image','e-adjust','e-total','e-nv-rank','e-natl-rank','e-natl-pct','e-new-season'].forEach(id=>{const el=$(id);if(el)el.value='';});
-  ['e-tier','e-adv'].forEach(id=>$(id).value='');
-  hideMsg('e-msg');
+function getKey() {
+  let k = null; try { k = localStorage.getItem(KEY_STORE); } catch (e) {}
+  if (!k) { k = prompt('Admin passcode:'); if (!k) return null; try { localStorage.setItem(KEY_STORE, k); } catch (e) {} }
+  return k;
 }
+async function api(path, body) {
+  const key = getKey();
+  if (!key) throw new Error('Passcode required to save');
+  let res;
+  try { res = await fetch(path, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Admin-Key': key }, body: JSON.stringify(body) }); }
+  catch (e) { throw new Error('Network error — check connection and retry'); }
+  if (res.status === 401) { try { localStorage.removeItem(KEY_STORE); } catch (e) {} throw new Error('Wrong passcode — try again'); }
+  let j = {}; try { j = await res.json(); } catch (e) {}
+  if (!res.ok) throw new Error(j.error || ('Save failed (HTTP ' + res.status + ')'));
+  return j;
+}
+const chains = new Map();
+function enqueue(key, fn) { const p = (chains.get(key) || Promise.resolve()).catch(() => {}).then(fn); chains.set(key, p); return p; }
+function setStatus(id, msg, kind) { const el = $(id); el.textContent = msg || ''; el.className = 'status-line ' + (kind || ''); }
 
-function showMsg(id,text,type){const el=$(id);el.textContent=text;el.className='msg '+type;el.style.display='block';setTimeout(()=>{el.style.display='none';},4000);}
-function hideMsg(id){const el=$(id);if(el)el.style.display='none';}
+// ═══════════════════════════════════════════════════════════════
+// PAGE: DATA ENTRY (quick grid)
+// ═══════════════════════════════════════════════════════════════
+const ENTRY = { season: null, round: 'R1', site: 'ALL', ranks: false };
+try { const s = JSON.parse(localStorage.getItem('wcta_entry') || '{}'); Object.assign(ENTRY, s); } catch (e) {}
+const saveEntryPrefs = () => { try { localStorage.setItem('wcta_entry', JSON.stringify(ENTRY)); } catch (e) {} };
+const NUMF = ['linux', 'win_desktop', 'win_server', 'packet_quiz', 'packet_image', 'adjust', 'total', 'nv_rank', 'natl_rank'];
+const PARTS = ['linux', 'win_desktop', 'win_server', 'packet_quiz', 'packet_image', 'adjust'];
+let recent = [];
 
-$('e-season').addEventListener('change',function(){$('e-new-season-wrap').style.display=this.value==='NEW'?'flex':'none';});
-
-function saveEntry(){
-  const seasonSel=$('e-season').value;
-  const season=seasonSel==='NEW'?($('e-new-season').value||'').trim():seasonSel;
-  const round=$('e-round').value;
-  if(!season){showMsg('e-msg','Season is required','err');return;}
-  const number=($('e-number').value||'').trim();
-  const name=($('e-name').value||'').trim();
-  if(!name){showMsg('e-msg','Team name is required','err');return;}
-
-  const gn=id=>{const v=parseFloat($(id).value);return isNaN(v)?null:v;};
-  const linux=gn('e-linux'),win_d=gn('e-win-desktop'),win_s=gn('e-win-server');
-  const pq=gn('e-pkt-quiz'),pi=gn('e-pkt-image');
-  const pt=(pq!=null||pi!=null)?(pq||0)+(pi||0):null;
-  const adj=gn('e-adjust');
-  let total=gn('e-total');
-  if(total==null){const parts=[linux,win_d,win_s,pt].filter(v=>v!=null);if(parts.length)total=parts.reduce((s,v)=>s+v,0)+(adj||0);}
-
-  const entry={
-    number,name,linux,win_desktop:win_d,win_server:win_s,
-    packet_quiz:pq,packet_image:pi,packet_total:pt,
-    adjust:adj,total,
-    nv_rank:gn('e-nv-rank'),natl_rank:gn('e-natl-rank'),natl_pct:gn('e-natl-pct'),
-    tier:$('e-tier').value||null,adv:$('e-adv').value||null
-  };
-
-  let key=localStorage.getItem('wcta_admin_key');
-  if(!key){
-    key=prompt('Admin passcode:');
-    if(!key){showMsg('e-msg','Passcode required to save','err');return;}
-    localStorage.setItem('wcta_admin_key',key);
+function scoreRow(season, round, num) { return (getRound(season, round)?.teams || []).find(t => t.number === num) || null; }
+function upsertLocal(season, round, row, siteId) {
+  if (!DB.seasons[season]) DB.seasons[season] = { rounds: {} };
+  if (!DB.seasons[season].rounds[round]) DB.seasons[season].rounds[round] = { teams: [] };
+  const ts = DB.seasons[season].rounds[round].teams, i = ts.findIndex(t => t.number === row.number);
+  const merged = { ...(i >= 0 ? ts[i] : {}), ...row, site: siteId };
+  if (i >= 0) ts[i] = merged; else ts.push(merged);
+  cacheDB();
+}
+function renderEntry() {
+  const ss = seasonsDesc();
+  if (!ENTRY.season || !(ENTRY.season in DB.seasons)) ENTRY.season = ss[0] || null;
+  const es = $('e-season');
+  es.innerHTML = ss.map(s => `<option value="${s}">20${s.slice(0, 2)}-${s.slice(3)}</option>`).join('') + '<option value="NEW">+ New Season…</option>';
+  es.value = ENTRY.season || 'NEW';
+  $('e-new-season-wrap').style.display = es.value === 'NEW' ? 'flex' : 'none';
+  $('e-round-bar').innerHTML = ROUNDS.map(r => `<button class="btn ${r === ENTRY.round ? 'active' : ''}" data-r="${r}">${ROUND_SHORT[r]}</button>`).join('');
+  $('e-round-bar').querySelectorAll('button').forEach(b => b.onclick = () => { ENTRY.round = b.dataset.r; saveEntryPrefs(); renderEntry(); });
+  const sites = siteList();
+  $('e-site').innerHTML = '<option value="ALL">All Schools</option>' + sites.map(s => `<option value="${s.id}">${esc(s.name)}</option>`).join('');
+  $('e-site').value = sites.some(s => s.id === ENTRY.site) ? ENTRY.site : 'ALL';
+  ENTRY.site = $('e-site').value;
+  $('page-entry').classList.toggle('show-ranks', ENTRY.ranks);
+  $('e-ranks-btn').textContent = ENTRY.ranks ? '− Hide Rankings' : '+ Show Rankings';
+  $('e-ranks-btn').classList.toggle('active', ENTRY.ranks);
+  const { season, round } = ENTRY;
+  $('e-nationwide').value = season ? (nationwide(season, round) ?? '') : '';
+  const body = $('e-body');
+  if (!season) { body.innerHTML = `<tr><td colspan="16"><div class="empty">Create a season to start entering scores.</div></td></tr>`; return; }
+  const list = registry(season).filter(t => ENTRY.site === 'ALL' || t.site === ENTRY.site);
+  $('e-tag').textContent = `◆ ${season} · ${ROUND_SHORT[round]} · ${list.length} TEAMS`;
+  if (!list.length) {
+    body.innerHTML = `<tr><td colspan="16"><div class="empty">NO TEAMS ${ENTRY.site === 'ALL' ? '' : 'FOR ' + esc(siteName(ENTRY.site)).toUpperCase() + ' '}IN ${season} YET<br><br><button class="linkish" data-goto="sites">Add team numbers under Sites &amp; Teams ▸</button></div></td></tr>`;
+    return;
   }
-  showMsg('e-msg','Saving…','ok');
-  fetch('/api/entry',{
-    method:'POST',
-    headers:{'Content-Type':'application/json','X-Admin-Key':key},
-    body:JSON.stringify({season,round,team:entry})
-  }).then(async res=>{
-    if(res.status===401){
-      localStorage.removeItem('wcta_admin_key');
-      showMsg('e-msg','Wrong passcode — try again','err');return;
-    }
-    if(!res.ok){showMsg('e-msg','Save failed (HTTP '+res.status+')','err');return;}
-    if(!DB.seasons[season])DB.seasons[season]={rounds:{}};
-    if(!DB.seasons[season].rounds[round])DB.seasons[season].rounds[round]={teams:[]};
-    const teams=DB.seasons[season].rounds[round].teams;
-    const existing=teams.findIndex(t=>(number&&t.number===number)||t.name===name);
-    if(existing>=0){teams[existing]={...teams[existing],...entry};showMsg('e-msg',`Updated: ${name}`,'ok');}
-    else{teams.push(entry);showMsg('e-msg',`Saved: ${name} — ${season} ${round}`,'ok');}
-    cacheDB();
-    recentEntries.unshift({season,round,name,total});
-    renderRecentEntries();
-    updateDataCount();
-    renderAll();
-  }).catch(()=>{showMsg('e-msg','Network error — check connection and retry','err');});
+  const opt = (v, cur, l) => `<option value="${v}" ${v === (cur || '') ? 'selected' : ''}>${l}</option>`;
+  body.innerHTML = list.map(t => {
+    const r = scoreRow(season, round, t.number) || {};
+    const auto = autoTotal(r);
+    const manual = r.total != null && auto != null && Math.abs(r.total - auto) > .001;
+    const pct = pctOf(r, season, round);
+    const cell = (f, v, extra) => `<td class="n"><input class="cell ${extra || ''}" data-f="${f}" inputmode="decimal" value="${v ?? ''}" aria-label="${esc(t.number)} ${f}"${f === 'packet_image' && r.packet_total != null && r.packet_quiz == null && r.packet_image == null ? ` placeholder="Σ${fmt(r.packet_total)}"` : ''}></td>`;
+    return `<tr data-num="${esc(t.number)}" data-site="${t.site}">
+      <td class="tnum">${esc(t.number)}</td>
+      <td><input class="cell name" data-f="name" value="${esc(t.name || '')}" placeholder="team name" aria-label="${esc(t.number)} name"></td>
+      <td><select data-f="site" aria-label="${esc(t.number)} school">${sites.map(s => opt(s.id, t.site, esc(s.name))).join('')}</select></td>
+      ${cell('linux', r.linux)}${cell('win_desktop', r.win_desktop)}${cell('win_server', r.win_server)}
+      ${cell('packet_quiz', r.packet_quiz)}${cell('packet_image', r.packet_image)}${cell('adjust', r.adjust)}
+      <td class="n"><input class="cell tot" data-f="total" data-manual="${manual ? 1 : 0}" inputmode="decimal" value="${r.total ?? ''}" aria-label="${esc(t.number)} total"></td>
+      <td><select data-f="tier">${opt('', r.tier, '—')}${opt('Platinum', r.tier, 'PLAT')}${opt('Gold', r.tier, 'GOLD')}${opt('Silver', r.tier, 'SILV')}</select></td>
+      <td><select data-f="adv">${opt('', r.adv, '—')}${opt('Adv.', r.adv, 'ADV')}</select></td>
+      <td class="n rk-col"><input class="cell" data-f="nv_rank" inputmode="numeric" value="${r.nv_rank ?? ''}"></td>
+      <td class="n rk-col"><input class="cell" data-f="natl_rank" inputmode="numeric" value="${r.natl_rank ?? ''}"></td>
+      <td class="n rk-col ro" data-pct>${fmtPct(pct)}</td>
+      <td>${r.number ? `<button class="btn" data-clear title="Remove this team's ${ROUND_NAME[round]} scores" style="padding:3px 8px">✕</button>` : ''}</td>
+    </tr>`;
+  }).join('');
 }
-
-function renderRecentEntries(){
-  if(!recentEntries.length){$('e-recent').innerHTML='<div class="empty">No entries this session</div>';return;}
-  $('e-recent').innerHTML=recentEntries.slice(0,8).map(e=>`
-    <div style="border-bottom:1px dashed var(--line-dim);padding:8px 0;font-size:12px">
-      <span style="color:var(--green)">${e.name}</span>
-      <span style="color:var(--mute);margin-left:8px">${e.season} ${e.round}</span>
-      <span style="color:var(--gold);float:right">${e.total!=null?e.total.toFixed(1):'—'}</span>
-    </div>`).join('');
+function autoTotal(r) {
+  const pk = (nn(r.packet_quiz) || nn(r.packet_image)) ? (r.packet_quiz || 0) + (r.packet_image || 0) : r.packet_total;
+  const parts = [r.linux, r.win_desktop, r.win_server, pk, r.cisco_score, r.boeing_score, r.web_score].filter(nn);
+  if (!parts.length) return null;
+  return Math.round((parts.reduce((a, v) => a + v, 0) + (r.adjust || 0)) * 100) / 100;
 }
-
-// ═══════════════════════════════════════════════════════════════
-// ANALYTICS PAGE
-// ═══════════════════════════════════════════════════════════════
-function renderAnalytics(){
-  renderAdvancement();
-  // Advancement bar chart — advanced-to-semis counts by tier per season
-  const seasons=Object.keys(DB.seasons).sort((a,b)=>SEASON_ORDER[a]-SEASON_ORDER[b]);
-  const platC=[],goldC=[],silvC=[];
-  seasons.forEach(s=>{
-    const st=getRound(s,'State');
-    const cnt=tier=>st?(st.teams||[]).filter(t=>t.tier===tier&&(t.adv==='Adv.'||t.adv==='Yes')).length:0;
-    platC.push(cnt('Platinum'));goldC.push(cnt('Gold'));silvC.push(cnt('Silver'));
+function parseNum(v) { v = String(v).trim().replace(/,/g, ''); if (v === '') return null; if (!/^-?\d+(\.\d+)?$/.test(v)) return undefined; return Number(v); }
+function readRow(tr) {
+  const r = { ...(scoreRow(ENTRY.season, ENTRY.round, tr.dataset.num) || {}) };
+  tr.querySelectorAll('input[data-f]').forEach(i => { if (NUMF.includes(i.dataset.f)) { const v = parseNum(i.value); if (v !== undefined) r[i.dataset.f] = v; } });
+  return r;
+}
+function flash(el) { el.classList.add('saved'); setTimeout(() => el.classList.remove('saved'), 900); }
+function addRecent(num, what, total) {
+  recent.unshift({ num, what, total, season: ENTRY.season, round: ENTRY.round, t: new Date() });
+  $('e-recent').innerHTML = recent.slice(0, 10).map(e => `<div style="border-bottom:1px dashed var(--line-dim);padding:7px 0;font-size:12px">
+    <span style="color:var(--dim)">${pad(e.t.getHours())}:${pad(e.t.getMinutes())}:${pad(e.t.getSeconds())}</span>
+    <span style="color:var(--green);margin-left:8px">${esc(e.num)}</span>
+    <span style="color:var(--mute);margin-left:8px">${e.season} ${e.round} · ${esc(e.what)}</span>
+    <span style="color:var(--gold);float:right">${e.total != null ? fmt(e.total) : ''}</span></div>`).join('');
+}
+function initEntryEvents() {
+  const body = $('e-body');
+  body.addEventListener('input', ev => {
+    const inp = ev.target; if (!inp.matches('input[data-f]')) return;
+    const f = inp.dataset.f, tr = inp.closest('tr');
+    if (NUMF.includes(f)) inp.classList.toggle('bad', parseNum(inp.value) === undefined);
+    if (PARTS.includes(f)) { const tot = tr.querySelector('[data-f=total]'); if (tot.dataset.manual !== '1') { const a = autoTotal(readRow(tr)); tot.value = a ?? ''; } }
+    if (f === 'total') tr.querySelector('[data-f=total]').dataset.manual = inp.value.trim() === '' ? '0' : '1';
   });
-  drawGroupedBar($('an-adv-chart'),[{values:platC},{values:goldC},{values:silvC}],seasons,['rgba(255,215,0,.8)','rgba(255,165,0,.7)','rgba(192,192,192,.6)']);
+  body.addEventListener('change', ev => {
+    const el = ev.target; const f = el.dataset.f; if (!f) return;
+    const tr = el.closest('tr'), num = tr.dataset.num, { season, round } = ENTRY;
+    if (f === 'name') {
+      enqueue(num, () => api('/api/teams', { action: 'rename', season, number: num, name: el.value }))
+        .then(() => { const t = DB.teams.find(x => x.season === season && x.number === num); if (t) t.name = el.value || null; else DB.teams.push({ season, number: num, name: el.value, site: tr.dataset.site }); for (const rd of Object.values(DB.seasons[season].rounds)) for (const x of rd.teams) if (x.number === num && el.value) x.name = el.value; cacheDB(); flash(el); setStatus('e-status', `Renamed ${num}`, 'ok'); })
+        .catch(e => setStatus('e-status', `${num}: ${e.message}`, 'err'));
+      return;
+    }
+    if (f === 'site') {
+      enqueue(num, () => api('/api/teams', { action: 'move', season, number: num, site: el.value }))
+        .then(() => { const t = DB.teams.find(x => x.season === season && x.number === num); if (t) t.site = el.value; else DB.teams.push({ season, number: num, name: null, site: el.value }); for (const rd of Object.values(DB.seasons[season].rounds)) for (const x of rd.teams) if (x.number === num) x.site = el.value; tr.dataset.site = el.value; cacheDB(); flash(el); setStatus('e-status', `${num} moved to ${siteName(el.value)}`, 'ok'); })
+        .catch(e => setStatus('e-status', `${num}: ${e.message}`, 'err'));
+      return;
+    }
+    const payload = { number: num, site: tr.dataset.site };
+    if (f === 'tier' || f === 'adv') payload[f] = el.value || null;
+    else {
+      const v = parseNum(el.value);
+      if (v === undefined) { setStatus('e-status', `${num}: scores must be plain numbers, like 87 or 12.5`, 'err'); return; }
+      payload[f] = v;
+      const r = readRow(tr);
+      if (f === 'packet_quiz' || f === 'packet_image') payload.packet_total = (nn(r.packet_quiz) || nn(r.packet_image)) ? Math.round(((r.packet_quiz || 0) + (r.packet_image || 0)) * 100) / 100 : null;
+      const totEl = tr.querySelector('[data-f=total]');
+      if (PARTS.includes(f) && totEl.dataset.manual !== '1') { const a = autoTotal({ ...r, ...payload }); payload.total = a; totEl.value = a ?? ''; }
+      if (f === 'total' && v === null) { totEl.dataset.manual = '0'; const a = autoTotal(r); payload.total = a; totEl.value = a ?? ''; }
+      if (f === 'natl_rank') { const nw = nationwide(season, round); payload.natl_pct = (v != null && nw) ? Math.round(v / nw * 10000) / 10000 : null; }
+    }
+    setStatus('e-status', `Saving ${num}…`);
+    enqueue(num, () => api('/api/entry', { season, round, team: payload }))
+      .then(j => {
+        upsertLocal(season, round, j.team || payload, tr.dataset.site);
+        flash(el);
+        const pc = tr.querySelector('[data-pct]'); if (pc) pc.textContent = fmtPct(pctOf(j.team || {}, season, round));
+        if (!tr.querySelector('[data-clear]')) tr.lastElementChild.innerHTML = `<button class="btn" data-clear style="padding:3px 8px">✕</button>`;
+        setStatus('e-status', `Saved ${num} · ${ROUND_NAME[round]}`, 'ok');
+        addRecent(num, f.replace('_', ' '), (j.team || payload).total);
+        updateCounts();
+      })
+      .catch(e => setStatus('e-status', `${num}: ${e.message}`, 'err'));
+  });
+  body.addEventListener('keydown', ev => {
+    if (ev.key !== 'Enter' || ev.target.tagName !== 'INPUT') return;
+    ev.preventDefault();
+    const f = ev.target.dataset.f, all = [...body.querySelectorAll(`input[data-f="${f}"]`)], nx = all[all.indexOf(ev.target) + 1];
+    if (nx) { nx.focus(); nx.select(); } else ev.target.blur();
+  });
+  let armed = null, armT = 0;
+  body.addEventListener('click', ev => {
+    const b = ev.target.closest('[data-clear]'); if (!b) return;
+    const tr = b.closest('tr'), num = tr.dataset.num, { season, round } = ENTRY;
+    if (armed !== b) { if (armed) { armed.classList.remove('armed'); armed.textContent = '✕'; } armed = b; b.classList.add('armed'); b.textContent = 'CLEAR?'; clearTimeout(armT); armT = setTimeout(() => { b.classList.remove('armed'); b.textContent = '✕'; armed = null; }, 4000); return; }
+    armed = null;
+    enqueue(num, () => api('/api/entry', { season, round, clear: num }))
+      .then(() => { const rd = getRound(season, round); if (rd) rd.teams = rd.teams.filter(t => t.number !== num); cacheDB(); setStatus('e-status', `Cleared ${num} · ${ROUND_NAME[round]}`, 'ok'); renderEntry(); updateCounts(); })
+      .catch(e => setStatus('e-status', `${num}: ${e.message}`, 'err'));
+  });
+  $('e-season').onchange = () => {
+    if ($('e-season').value === 'NEW') { $('e-new-season-wrap').style.display = 'flex'; $('e-new-season').focus(); return; }
+    ENTRY.season = $('e-season').value; saveEntryPrefs(); renderEntry();
+  };
+  $('e-new-season-go').onclick = () => {
+    const v = $('e-new-season').value.trim();
+    if (!/^\d{2}-\d{2}$/.test(v)) { setStatus('e-status', 'Season looks like 27-28', 'err'); return; }
+    if (!DB.seasons[v]) DB.seasons[v] = { rounds: {} };
+    ENTRY.season = v; ENTRY.round = 'R1'; saveEntryPrefs(); fillSeasonSelects(); renderEntry();
+    setStatus('e-status', `Season ${v} ready. Add its team numbers under Sites & Teams.`, 'ok');
+  };
+  $('e-site').onchange = () => { ENTRY.site = $('e-site').value; saveEntryPrefs(); renderEntry(); };
+  $('e-ranks-btn').onclick = () => { ENTRY.ranks = !ENTRY.ranks; saveEntryPrefs(); renderEntry(); };
+  $('e-nationwide').onchange = () => {
+    const { season, round } = ENTRY, v = $('e-nationwide').value;
+    api('/api/entry', { season, round, meta: { teams_nationwide: v } })
+      .then(() => { if (!DB.seasons[season].rounds[round]) DB.seasons[season].rounds[round] = { teams: [] }; DB.seasons[season].rounds[round].teams_nationwide = v === '' ? null : Number(v); cacheDB(); flash($('e-nationwide')); setStatus('e-status', `Teams nationwide saved for ${season} ${ROUND_NAME[round]}`, 'ok'); renderEntry(); })
+      .catch(e => setStatus('e-status', e.message, 'err'));
+  };
+  $('e-json').onclick = exportJSON; $('e-csv').onclick = exportCSV;
+  $('e-reload').onclick = async () => { if (confirm('Reload all data from the server?')) { try { localStorage.removeItem(CACHE_KEY); } catch (e) {} await loadDB(); afterLoad(); setStatus('e-status', 'Data reloaded from server', 'ok'); } };
+  $('e-forget').onclick = () => { try { localStorage.removeItem(KEY_STORE); } catch (e) {} setStatus('e-status', 'Saved passcode cleared. You will be asked on the next save.', 'ok'); };
 }
 
-function renderAdvancement(){
-  const seasons=Object.keys(DB.seasons).sort((a,b)=>SEASON_ORDER[a]-SEASON_ORDER[b]);
-  let html='<table class="lb"><thead><tr><th>Season</th><th>Tier</th><th class="n">Teams at State</th><th class="n">Advanced to Semis</th><th class="n">Rate</th></tr></thead><tbody>';
-  seasons.forEach(s=>{
-    const st=getRound(s,'State');if(!st)return;
-    ['Platinum','Gold','Silver'].forEach(tier=>{
-      const all=(st.teams||[]).filter(t=>t.tier===tier);
-      const adv=all.filter(t=>t.adv==='Adv.'||t.adv==='Yes');
-      const rate=all.length?adv.length/all.length:0;
-      if(!all.length)return;
-      html+=`<tr>
-        <td>${s}</td>
-        <td><span class="tier ${tierClass(tier)}">${tier.slice(0,4).toUpperCase()}</span></td>
-        <td class="n">${all.length}</td>
-        <td class="n" style="color:var(--green)">${adv.length}</td>
-        <td class="n">${(rate*100).toFixed(0)}%</td>
-      </tr>`;
+// ═══════════════════════════════════════════════════════════════
+// PAGE: SITES & TEAMS
+// ═══════════════════════════════════════════════════════════════
+let ST_SEASON = null, stArmed = null, stArmT = 0;
+function renderSitesPage() {
+  const ss = seasonsDesc();
+  if (!ST_SEASON || !(ST_SEASON in DB.seasons)) ST_SEASON = ENTRY.season && (ENTRY.season in DB.seasons) ? ENTRY.season : ss[0];
+  $('st-season').innerHTML = ss.map(s => `<option value="${s}">20${s.slice(0, 2)}-${s.slice(3)}</option>`).join('');
+  $('st-season').value = ST_SEASON;
+  const sites = siteList();
+  const tsel = $('st-team-site'), cur = tsel.value;
+  tsel.innerHTML = sites.map(s => `<option value="${s.id}">${esc(s.name)}</option>`).join('');
+  tsel.value = sites.some(s => s.id === cur) ? cur : HOME;
+  if (!DB.migrated) { $('st-list').innerHTML = '<div class="empty" style="margin-top:22px">Run the database migration (migrations/001_multi_school.sql) to manage schools and teams.</div>'; return; }
+  const reg = ST_SEASON ? registry(ST_SEASON) : [];
+  $('st-list').innerHTML = sites.map(s => {
+    const ts = reg.filter(t => t.site === s.id), col = siteColor(s.id), fixed = s.id === HOME || s.id === 'unknown';
+    const delKey = 'site:' + s.id;
+    return `<div class="panel site-card" style="--c:${col}" data-site="${s.id}">
+      <div class="phead"><span class="nm">${esc(s.name)}</span>${s.id === HOME ? '<span class="home-tag">HOME</span>' : ''}<span class="cnt">${ts.length} TEAM${ts.length === 1 ? '' : 'S'} · ${ST_SEASON || ''}</span>
+        <span class="acts">${s.id !== 'unknown' ? `<input type="color" value="${col}" data-act="color" title="School color" aria-label="${esc(s.name)} color">` : ''}
+          ${!fixed ? `<button class="btn" data-act="rename">Rename</button>` : ''}
+          ${!fixed && !ts.length ? `<button class="btn danger ${stArmed === delKey ? 'armed' : ''}" data-act="delete">${stArmed === delKey ? 'Confirm Remove' : 'Remove'}</button>` : ''}</span></div>
+      <div class="pbody">${ts.length ? ts.map(t => {
+        const got = ROUNDS.filter(r => scoreRow(ST_SEASON, r, t.number)).map(r => ROUND_SHORT[r]).join(' · ');
+        const k = 'team:' + t.number;
+        return `<div class="team-line" data-num="${esc(t.number)}">
+          <span class="tnum">${esc(t.number)}</span>
+          <input type="text" value="${esc(t.name || '')}" placeholder="team name" data-act="tname" aria-label="${esc(t.number)} name">
+          <span class="got">${got ? 'Scores: ' + got : 'No scores yet'}</span>
+          <select data-act="move" aria-label="Move ${esc(t.number)}">${sites.map(o => `<option value="${o.id}" ${o.id === s.id ? 'selected' : ''}>${esc(o.name)}</option>`).join('')}</select>
+          <button class="btn danger ${stArmed === k ? 'armed' : ''}" data-act="tremove">${stArmed === k ? (got ? 'Remove + Scores' : 'Confirm') : 'Remove'}</button>
+        </div>`;
+      }).join('') : `<div class="hint">No teams for ${ST_SEASON || 'this season'} yet. Use Add Teams above and pick ${esc(s.name)}.</div>`}</div></div>`;
+  }).join('');
+}
+function stArm(key) { stArmed = key; clearTimeout(stArmT); stArmT = setTimeout(() => { stArmed = null; renderSitesPage(); }, 5000); renderSitesPage(); }
+async function stDo(fn, statusId, okMsg) {
+  try { const j = await fn(); await loadDB(); afterLoad(); if (okMsg) setStatus(statusId, typeof okMsg === 'function' ? okMsg(j) : okMsg, 'ok'); }
+  catch (e) { setStatus(statusId, e.message, 'err'); renderSitesPage(); }
+}
+function initSitesEvents() {
+  $('st-season').onchange = () => { ST_SEASON = $('st-season').value; renderSitesPage(); };
+  $('st-site-add').onclick = () => {
+    const name = $('st-site-name').value.trim();
+    if (!name) return setStatus('st-site-status', 'Enter a school name first', 'err');
+    stDo(() => api('/api/sites', { action: 'add', name }), 'st-site-status', j => { $('st-site-name').value = ''; $('st-team-site').value = j.id; return `Added ${name}. Now add its team numbers.`; });
+  };
+  $('st-site-name').onkeydown = e => { if (e.key === 'Enter') $('st-site-add').click(); };
+  $('st-team-add').onclick = () => {
+    const nums = $('st-team-nums').value.split(/[\s,;]+/).filter(Boolean), sid = $('st-team-site').value;
+    if (!ST_SEASON) return setStatus('st-team-status', 'Create a season first (Data Entry → + New Season)', 'err');
+    if (!nums.length) return setStatus('st-team-status', 'Enter at least one team number', 'err');
+    stDo(() => api('/api/teams', { action: 'add', season: ST_SEASON, site: sid, numbers: nums }), 'st-team-status', j => {
+      $('st-team-nums').value = '';
+      return (j.added.length ? `Added ${j.added.length} team${j.added.length === 1 ? '' : 's'} to ${siteName(sid)}.` : 'No new teams added.') + (j.skipped.length ? ' Already listed: ' + j.skipped.map(s => `${s.number} (${siteName(s.site)})`).join(', ') + '.' : '');
+    });
+  };
+  $('st-team-nums').onkeydown = e => { if (e.key === 'Enter') $('st-team-add').click(); };
+  const list = $('st-list');
+  list.addEventListener('click', ev => {
+    const b = ev.target.closest('button[data-act]'); if (!b) return;
+    const card = b.closest('[data-site]'), sid = card.dataset.site, act = b.dataset.act;
+    if (act === 'rename') {
+      const nm = prompt('New name for ' + siteName(sid) + ':', siteName(sid)); if (!nm || !nm.trim()) return;
+      stDo(() => api('/api/sites', { action: 'rename', id: sid, name: nm.trim() }), 'st-site-status', `Renamed to ${nm.trim()}`);
+    } else if (act === 'delete') {
+      const k = 'site:' + sid; if (stArmed !== k) return stArm(k);
+      stArmed = null; stDo(() => api('/api/sites', { action: 'delete', id: sid }), 'st-site-status', 'School removed');
+    } else if (act === 'tremove') {
+      const num = b.closest('[data-num]').dataset.num, k = 'team:' + num; if (stArmed !== k) return stArm(k);
+      stArmed = null; stDo(() => api('/api/teams', { action: 'remove', season: ST_SEASON, number: num }), 'st-team-status', `Removed ${num}`);
+    }
+  });
+  list.addEventListener('change', ev => {
+    const el = ev.target, act = el.dataset.act; if (!act) return;
+    const card = el.closest('[data-site]'), sid = card.dataset.site;
+    if (act === 'color') stDo(() => api('/api/sites', { action: 'color', id: sid, color: el.value.toUpperCase() }), 'st-site-status', 'Color saved');
+    else if (act === 'move') { const num = el.closest('[data-num]').dataset.num; stDo(() => api('/api/teams', { action: 'move', season: ST_SEASON, number: num, site: el.value }), 'st-team-status', `${num} moved to ${siteName(el.value)}`); }
+    else if (act === 'tname') { const num = el.closest('[data-num]').dataset.num; stDo(() => api('/api/teams', { action: 'rename', season: ST_SEASON, number: num, name: el.value }), 'st-team-status', `Renamed ${num}`); }
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+// PAGE: ANALYTICS
+// ═══════════════════════════════════════════════════════════════
+function renderAnalytics() {
+  const sid = $('an-site').value || HOME;
+  $('an-meta').textContent = sid === 'ALL' ? 'ALL SCHOOLS' : siteName(sid).toUpperCase();
+  const seasons = seasonsAsc();
+  const isAdv = t => t.adv === 'Adv.' || t.adv === 'Yes';
+  let html = '<table class="lb"><thead><tr><th>Season</th><th>Tier</th><th class="n">Teams at State</th><th class="n">Advanced to Semis</th><th class="n">Rate</th></tr></thead><tbody>';
+  let any = false;
+  seasons.forEach(s => {
+    const st = rowsFor(s, 'State', sid);
+    ['Platinum', 'Gold', 'Silver'].forEach(tier => {
+      const all = st.filter(t => t.tier === tier); if (!all.length) return;
+      const adv = all.filter(isAdv); any = true;
+      html += `<tr><td>${s}</td><td><span class="tier ${tierClass(tier)}">${tier.slice(0, 4).toUpperCase()}</span></td><td class="n">${all.length}</td><td class="n" style="color:var(--green)">${adv.length}</td><td class="n">${(adv.length / all.length * 100).toFixed(0)}%</td></tr>`;
     });
   });
-  $('an-adv-body').innerHTML=html+'</tbody></table>';
+  $('an-adv-body').innerHTML = any ? html + '</tbody></table>' : '<div class="empty">No state round data for this school yet</div>';
+  const grp = (round, filt) => ['Platinum', 'Gold', 'Silver'].map((tier, j) => ({ color: [C.gold, C.amber, C.silver][j], values: seasons.map(s => rowsFor(s, round, sid).filter(t => t.tier === tier && (!filt || filt(t))).length) }));
+  chart('an-adv-chart', drawGrouped({ groups: grp('State', isAdv), labels: seasons, empty: 'NO ADVANCEMENT DATA' }));
+  const tierRound = s => getRound(s, 'R2') ? 'R2' : 'R1';
+  chart('an-tier-chart', drawGrouped({ groups: ['Platinum', 'Gold', 'Silver'].map((tier, j) => ({ color: [C.gold, C.amber, C.silver][j], values: seasons.map(s => rowsFor(s, tierRound(s), sid).filter(t => t.tier === tier).length) })), labels: seasons, empty: 'NO TIER DATA' }));
 }
 
-
 // ═══════════════════════════════════════════════════════════════
-// SEMI-FINALS PAGE
+// PAGE: SEMI-FINALS
 // ═══════════════════════════════════════════════════════════════
-function renderSemis(){
-  const season=$('sm-season').value;
-  const rd=getRound(season,'Semis');
-  $('sm-tag').textContent=`◆ ${season}`;
-  if(!rd){$('sm-body').innerHTML='<tr><td colspan="11" class="empty">No semi-finals data for this season</td></tr>';return;}
-  const teams=[...(rd.teams||[])].sort((a,b)=>(b.total||0)-(a.total||0));
-
-  // Stats
-  const plat=teams.filter(t=>t.tier==='Platinum').length;
-  const gold=teams.filter(t=>t.tier==='Gold').length;
-  const silv=teams.filter(t=>t.tier==='Silver').length;
-  const best=teams[0];
-  $('sm-stats').innerHTML=`
-    <div class="stat-box"><div class="sk">Teams in Semis</div><div class="sv">${teams.length}</div></div>
-    <div class="stat-box"><div class="sk">Platinum</div><div class="sv" style="color:var(--gold)">${plat}</div></div>
-    <div class="stat-box"><div class="sk">Gold</div><div class="sv" style="color:var(--amber)">${gold}</div></div>
-    <div class="stat-box"><div class="sk">Silver</div><div class="sv" style="color:var(--silver)">${silv}</div></div>
-  `;
-
-  const maxT=best?.total||1;
-  $('sm-body').innerHTML=teams.map((t,i)=>`<tr>
-    <td class="rk ${i===0?'r1':i===1?'r2':i===2?'r3':''}"><span class="p">${i===0?'◆':''} ${i+1}</span></td>
-    <td class="team-name">${t.name}<small>${t.number}</small></td>
-    <td class="n">${fmt(t.linux)}</td>
-    <td class="n">${fmt(t.win_server)}</td>
-    <td class="n">${fmt(t.img_score)}</td>
-    <td class="n">${fmt(t.cisco_score??t.packet_quiz)}</td>
-    <td class="n">${fmt(t.web_score)}</td>
-    <td class="bar"><span class="fill" style="width:${((t.total||0)/maxT*100).toFixed(0)}%"></span><span class="label">${(t.total||0).toFixed(2)}</span></td>
-    <td class="n">${t.natl_rank!=null?'#'+t.natl_rank:'—'}</td>
-    <td class="n">${t.natl_pct!=null?fmtPct(t.natl_pct):'—'}</td>
-    <td><span class="tier ${tierClass(t.tier)}">${(t.tier||'—').slice(0,4).toUpperCase()}</span></td>
-  </tr>`).join('');
-
-  // Tier representation
-  const renderTierRep=(elId,platN,platT,goldN,goldT,silvN,silvT)=>{
-    const pct=(n,t)=>t?Math.round(n/t*100)+'%':'—';
-    $(elId).innerHTML=`
-      <div class="cmp-row"><div class="cmp-label">Platinum (${platN}/${platT})</div>
-        <div class="cmp-bar-wrap"><div class="cmp-fill fill-plat" style="width:${platT?platN/platT*100:0}%"></div><span class="cmp-val">${pct(platN,platT)}</span></div></div>
-      <div class="cmp-row"><div class="cmp-label">Gold (${goldN}/${goldT})</div>
-        <div class="cmp-bar-wrap"><div class="cmp-fill fill-gold" style="width:${goldT?goldN/goldT*100:0}%"></div><span class="cmp-val">${pct(goldN,goldT)}</span></div></div>
-      <div class="cmp-row"><div class="cmp-label">Silver (${silvN}/${silvT})</div>
-        <div class="cmp-bar-wrap"><div class="cmp-fill fill-silv" style="width:${silvT?silvN/silvT*100:0}%"></div><span class="cmp-val">${pct(silvN,silvT)}</span></div></div>
-    `;
-  };
-  renderTierRep('sm-tier-nat',plat,rd.teams_plat_nationwide||null,gold,rd.teams_gold_nationwide||null,silv,rd.teams_silver_nationwide||null);
-  renderTierRep('sm-tier-nv',plat,rd.teams_plat_nv||null,gold,rd.teams_gold_nv||null,silv,rd.teams_silver_nv||null);
-
-  // Historical grouped bar
-  renderSemisHistory();
-}
-
-function renderSemisHistory(){
-  const seasons=Object.keys(DB.seasons).sort((a,b)=>SEASON_ORDER[a]-SEASON_ORDER[b]);
-  const platC=[],goldC=[],silvC=[];
-  seasons.forEach(s=>{
-    const rd=getRound(s,'Semis');
-    const ts=rd?.teams||[];
-    platC.push(ts.filter(t=>t.tier==='Platinum').length);
-    goldC.push(ts.filter(t=>t.tier==='Gold').length);
-    silvC.push(ts.filter(t=>t.tier==='Silver').length);
-  });
-  drawGroupedBar($('sm-hist'),[{values:platC},{values:goldC},{values:silvC}],seasons,['rgba(255,215,0,.8)','rgba(255,165,0,.7)','rgba(192,192,192,.6)']);
+function renderSemis() {
+  const season = $('sm-season').value, sid = $('sm-site').value || HOME;
+  $('sm-tag').textContent = `◆ ${season} · ${sid === 'ALL' ? 'ALL SCHOOLS' : siteName(sid).toUpperCase()}`;
+  $('sm-hist-tag').textContent = `◆ ${sid === 'ALL' ? 'ALL SCHOOLS' : siteName(sid).toUpperCase()}`;
+  const teams = rowsFor(season, 'Semis', sid).slice().sort(byTotal);
+  const cnt = k => teams.filter(t => t.tier === k).length;
+  $('sm-stats').innerHTML = `
+    <div class="stat-box"><div class="sk">Teams in Semis</div><div class="sv" data-dc="${teams.length}">${teams.length}</div></div>
+    <div class="stat-box"><div class="sk">Platinum</div><div class="sv" style="color:var(--gold)" data-dc="${cnt('Platinum')}">${cnt('Platinum')}</div></div>
+    <div class="stat-box"><div class="sk">Gold</div><div class="sv" style="color:var(--amber)" data-dc="${cnt('Gold')}">${cnt('Gold')}</div></div>
+    <div class="stat-box"><div class="sk">Silver</div><div class="sv" style="color:var(--silver)" data-dc="${cnt('Silver')}">${cnt('Silver')}</div></div>`;
+  decryptAll($('sm-stats'));
+  const maxT = teams[0]?.total || 1;
+  $('sm-body').innerHTML = teams.length ? teams.map((t, i) => `<tr>
+    <td class="rk ${i === 0 ? 'r1' : i === 1 ? 'r2' : i === 2 ? 'r3' : ''}"><span class="p">${i === 0 ? '◆' : ''} ${i + 1}</span></td>
+    <td class="team-name">${esc(teamLabel(t))}<small>${esc(t.number)}</small></td><td>${siteTag(t.site)}</td>
+    <td class="n">${fmt(t.linux)}</td><td class="n">${fmt(t.win_server)}</td><td class="n">${fmt(t.img_score)}</td>
+    <td class="n">${fmt(t.cisco_score ?? t.packet_quiz)}</td><td class="n">${fmt(t.web_score)}</td>
+    <td class="bar"><span class="fill" style="width:${((t.total || 0) / maxT * 100).toFixed(0)}%"></span><span class="label">${(t.total || 0).toFixed(2)}</span></td>
+    <td class="n">${t.natl_rank != null ? '#' + t.natl_rank : '—'}</td><td class="n">${fmtPct(pctOf(t, season, 'Semis'))}</td>
+    <td>${t.tier ? `<span class="tier ${tierClass(t.tier)}">${t.tier.slice(0, 4).toUpperCase()}</span>` : '—'}</td></tr>`).join('')
+    : '<tr><td colspan="12" class="empty">No semi-finals data for this selection</td></tr>';
+  const seasons = seasonsAsc();
+  chart('sm-hist', drawGrouped({ groups: ['Platinum', 'Gold', 'Silver'].map((tier, j) => ({ color: [C.gold, C.amber, C.silver][j], values: seasons.map(s => rowsFor(s, 'Semis', sid).filter(t => t.tier === tier).length) })), labels: seasons, empty: 'NO SEMI-FINALS DATA' }));
 }
 
 // ═══════════════════════════════════════════════════════════════
 // EXPORT
 // ═══════════════════════════════════════════════════════════════
-function exportJSON(){
-  const blob=new Blob([JSON.stringify(DB,null,2)],{type:'application/json'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
-  a.download=`wcta_cyberpatriot_${new Date().toISOString().slice(0,10)}.json`;a.click();
-}
-
-function exportCSV(){
-  const rows=getAllRows();
-  const headers=['season','round','rank','number','name','linux','win_desktop','win_server','packet_quiz','packet_image','packet_total','adjust','total','nv_rank','natl_rank','natl_pct','tier','adv'];
-  const csv=[headers.join(','),...rows.map(r=>headers.map(h=>r[h]??'').join(','))].join('\n');
-  const blob=new Blob([csv],{type:'text/csv'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
-  a.download=`wcta_cyberpatriot_${new Date().toISOString().slice(0,10)}.csv`;a.click();
+function download(name, text, type) { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], { type })); a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); }
+function exportJSON() { download(`wcta_cyberpatriot_${new Date().toISOString().slice(0, 10)}.json`, JSON.stringify(DB, null, 2), 'application/json'); }
+function exportCSV() {
+  const headers = ['season', 'round', 'rank', 'number', 'name', 'siteName', 'linux', 'win_desktop', 'win_server', 'packet_quiz', 'packet_image', 'packet_total', 'adjust', 'total', 'nv_rank', 'natl_rank', 'natl_pct', 'tier', 'adv'];
+  const q = v => { v = v ?? ''; v = String(v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
+  const csv = [headers.map(h => h === 'siteName' ? 'school' : h).join(','), ...getAllRows().map(r => headers.map(h => q(r[h])).join(','))].join('\n');
+  download(`wcta_cyberpatriot_${new Date().toISOString().slice(0, 10)}.csv`, csv, 'text/csv');
 }
 
 // ═══════════════════════════════════════════════════════════════
-// LIVE LOG FEED
+// NAV, CLOCK, INIT
 // ═══════════════════════════════════════════════════════════════
-function initLog(){
-  const rd=getRound('25-26','R2');
-  const events=[];
-  if(rd){
-    const sorted=[...(rd.teams||[])].sort((a,b)=>(b.total||0)-(a.total||0));
-    sorted.slice(0,6).forEach(t=>{
-      events.push({l:'ok',lb:'SCR',m:`<em>${t.name}</em> R2 total &mdash; <strong>${(t.total||0).toFixed(1)}</strong>`});
-    });
-  }
-  events.push({l:'info',lb:'INF',m:'System online · all data loaded'});
-  events.push({l:'info',lb:'INF',m:'Cloudflare D1 · live sync active'});
-  const ul=$('log');
-  events.forEach(e=>{
-    const li=document.createElement('li');
-    const t=new Date();
-    li.innerHTML=`<span class="t">${pad(t.getHours())}:${pad(t.getMinutes())}:${pad(t.getSeconds())}</span><span class="l ${e.l}">${e.lb}</span><span class="m">${e.m}</span>`;
-    ul.appendChild(li);
-  });
-  const extras=[
-    {l:'ok',lb:'SCR',m:'Packet tracer scores loaded'},
-    {l:'warn',lb:'FLG',m:'Penalty detected · adjust applied'},
-    {l:'info',lb:'INF',m:'Tier recalc complete · Platinum/Gold/Silver'},
-    {l:'ok',lb:'ADV',m:'State advancement flags parsed'},
-    {l:'info',lb:'INF',m:'National percentiles indexed'},
-    {l:'ok',lb:'SCR',m:'Analytics ready'},
-  ];
-  setInterval(()=>{
-    const e=extras[Math.floor(Math.random()*extras.length)];
-    const t=new Date();
-    const li=document.createElement('li');
-    li.innerHTML=`<span class="t">${pad(t.getHours())}:${pad(t.getMinutes())}:${pad(t.getSeconds())}</span><span class="l ${e.l}">${e.lb}</span><span class="m">${e.m}</span>`;
-    li.style.opacity='0';li.style.transform='translateX(-6px)';
-    ul.prepend(li);
-    requestAnimationFrame(()=>{li.style.transition='opacity .4s,transform .4s';li.style.opacity='1';li.style.transform='none';});
-    while(ul.children.length>14)ul.removeChild(ul.lastChild);
-  },5000);
+const RENDER = { overview: renderOverview, allsites: renderAllSites, schools: renderSchools, scoreboard: renderScoreboard, entry: renderEntry, sites: renderSitesPage, analytics: renderAnalytics, semis: renderSemis };
+const PATH = { overview: 'overview', allsites: 'all-sites', schools: 'schools', scoreboard: 'scoreboard', entry: 'data-entry', sites: 'sites-teams', analytics: 'analytics', semis: 'semi-finals' };
+function showPage(name) {
+  if (!RENDER[name]) name = 'overview';
+  CUR_PAGE = name;
+  document.querySelectorAll('.page').forEach(p => p.classList.toggle('active', p.id === 'page-' + name));
+  document.querySelectorAll('#nav button').forEach(b => b.classList.toggle('active', b.dataset.page === name));
+  $('cur-page-path').textContent = PATH[name];
+  tt.style.display = 'none';
+  try { history.replaceState(null, '', '#' + name); } catch (e) {}
+  renderCurrent();
+  replayPage(name);
+}
+function renderCurrent() { try { RENDER[CUR_PAGE](); } catch (e) { console.error(e); } updateCounts(); }
+function updateCounts() {
+  const n = getAllRows().length;
+  $('data-count').textContent = `${n} records`;
+  $('cur-season').textContent = VIEW.season || '—';
+  const reg = VIEW.season ? registry(VIEW.season) : [];
+  $('cur-teams').textContent = reg.length;
+  $('cur-sites').textContent = new Set(reg.map(t => t.site)).size;
+  $('build').textContent = `v3.0.0 // ${seasonsAsc().length} SEASONS · ${siteList().filter(s => s.id !== 'unknown').length} SITES`;
+}
+function afterLoad() { fillSeasonSelects(); renderCurrent(); }
+
+document.querySelectorAll('#nav button').forEach(b => b.onclick = () => showPage(b.dataset.page));
+document.addEventListener('click', ev => { const g = ev.target.closest('[data-goto]'); if (g) { ev.preventDefault(); showPage(g.dataset.goto); window.scrollTo(0, 0); } });
+['sb-season', 'sb-round', 'sb-tier', 'sb-site'].forEach(id => $(id).onchange = renderScoreboard);
+$('sb-search').oninput = renderScoreboard;
+$('sb-csv').onclick = exportCSV;
+$('sb-prev').onclick = () => sbPage(-1); $('sb-next').onclick = () => sbPage(1);
+document.querySelectorAll('#sb-table th[data-col]').forEach(th => th.onclick = () => sbSort(th.dataset.col));
+$('an-site').onchange = renderAnalytics;
+$('sm-season').onchange = renderSemis; $('sm-site').onchange = renderSemis;
+initEntryEvents(); initSitesEvents();
+window.addEventListener('resize', () => markDirty());
+window.addEventListener('hashchange', () => { const h = location.hash.slice(1); if (RENDER[h] && h !== CUR_PAGE) showPage(h); });
+
+const startT = Date.now();
+function tick() {
+  const n = new Date();
+  $('clock').textContent = `${pad(n.getHours())}:${pad(n.getMinutes())}:${pad(n.getSeconds())}`;
+  const s = Math.floor((Date.now() - startT) / 1000);
+  $('uptime').textContent = `${pad(Math.floor(s / 3600))}:${pad(Math.floor(s / 60) % 60)}:${pad(s % 60)}`;
+}
+tick(); setInterval(tick, 1000);
+if (!RM) {
+  const shell = document.querySelector('.shell');
+  setInterval(() => { if (Math.random() < .3) { shell.style.transition = 'filter .08s'; shell.style.filter = 'hue-rotate(6deg) contrast(1.05)'; setTimeout(() => { shell.style.filter = ''; }, 90); } }, 7000);
 }
 
-// ═══════════════════════════════════════════════════════════════
-// CLOCK & GLITCH
-// ═══════════════════════════════════════════════════════════════
-const startT=Date.now();
-function tick(){
-  const n=new Date();
-  $('clock').textContent=`${pad(n.getHours())}:${pad(n.getMinutes())}:${pad(n.getSeconds())}`;
-  const s=Math.floor((Date.now()-startT)/1000);
-  $('uptime').textContent=`${pad(Math.floor(s/3600))}:${pad(Math.floor(s/60)%60)}:${pad(s%60)}`;
-}
-tick();setInterval(tick,1000);
-const shell=document.querySelector('.shell');
-setInterval(()=>{if(Math.random()<.3){shell.style.transition='filter .08s';shell.style.filter='hue-rotate(6deg) contrast(1.05)';setTimeout(()=>{shell.style.filter='';},90);}},7000);
-
-function updateDataCount(){
-  const n=getAllRows().length;$('data-count').textContent=`${n} records`;
-}
-
-function renderAll(){renderOverview();renderScoreboard();renderAnalytics();renderSemis();}
-
-// ═══════════════════════════════════════════════════════════════
-// INIT
-// ═══════════════════════════════════════════════════════════════
-(async function(){
+(async function init() {
   await loadDB();
-  renderOverview();
-  renderScoreboard();
-  initLog();
-  updateDataCount();
+  fillSeasonSelects();
+  const first = (location.hash || '').slice(1);
+  showPage(RENDER[first] ? first : 'overview');
 })();
+
 </script>
 </body>
 </html>
