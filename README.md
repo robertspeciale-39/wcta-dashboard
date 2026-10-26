@@ -22,5 +22,6 @@ WCTA CyberPatriot Dashboard — dashboard.wctacyber.org (Cloudflare Pages + D1)
 All POST routes require the `X-Admin-Key` header, which must match the `ADMIN_KEY` environment variable.
 
 ## Upgrading the live database
-Run `migrations/001_multi_school.sql` once in Cloudflare → D1 → your database → Console.
+In Cloudflare → D1 → your database → Console, paste and Execute `migrations/001a_tables.sql`, then `migrations/001b_seed.sql`
+(same content as `001_multi_school.sql`, without comments, because the D1 console rejects comment-led input). Safe to re-run.
 Do **not** run `schema.sql` on the live database.
